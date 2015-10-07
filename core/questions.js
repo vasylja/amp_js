@@ -33,3 +33,16 @@ function update (id, question) {
 function remove (id) {
 	return db('questions').del().where({ id: id });
 }
+
+// params = { id: 1 }`
+function query (params) {
+	var builder = db('questions');
+	builder.select('*');
+	if ( params.id ) {
+		builder.where('id', params.id);
+	}
+	if ( params.text ) {
+		builder.where('text', params.text);
+	}
+	return builder;
+}
