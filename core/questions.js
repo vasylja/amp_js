@@ -23,7 +23,12 @@ function findAll () {
 function find (id) {
 	//return db('questions').where('id', id); // [ { id: 1} ]
 	//return db('questions').where('id', id).first(); // { id: 1 }
-	return db('questions').where({ id: id }).first(); // { id: 1 }
+	return db('questions').where({ id: id }).first().then(function (question) {
+		return db('choices').where({ question_id: question.id }).then(function (choices) {
+			question.choices = choices;
+			return question;
+		})
+	});
 }
 
 function update (id, question) {
@@ -46,3 +51,7 @@ function query (params) {
 	}
 	return builder;
 }
+
+//find(1).then(function (question) {
+//	console.log(question);
+//});
