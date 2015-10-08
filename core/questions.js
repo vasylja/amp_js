@@ -11,7 +11,9 @@ module.exports = {
 
 // params = { name: 'Test name' }
 function create (params) {
-	return db('questions').insert(params); // []
+	return db('questions').insert(params).returning('id').then(function (array) {
+		return +array[0];
+	});
 }
 
 function findAll () {
