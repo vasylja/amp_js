@@ -49,11 +49,11 @@ function query (params) {
 		builder.where('id', params.id);
 	}
 	if ( params.text ) {
-		builder.where('text', params.text);
+		builder.where('text', 'ilike','%'+params.text+'%');
 	}
 	return builder;
 }
 
-//find(1).then(function (question) {
-//	console.log(question);
+//query({'text': 'text'}).then(function (result) {
+//    console.log(result);
 //});
