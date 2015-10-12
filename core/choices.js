@@ -11,7 +11,9 @@ module.exports = {
 
 // params = { name: 'Text' }
 function create (params) {
-    return db('choices').insert(params); // []
+    return db('choices').insert(params).returning('id').then(function (array) {
+        return +array[0];
+    });
 }
 
 function findAll () {
@@ -41,6 +43,9 @@ function query (params) {
     }
     if ( params.question_id ) {
         builder.where('question_id', params.question_id);
+    }
+    if ( params.text ) {
+        builder.where('text', 'ilike','%'+params.text+'%');
     }
     return builder;
 }
