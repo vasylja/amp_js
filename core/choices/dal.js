@@ -1,4 +1,4 @@
-var db = require('../db');
+var db = require('../../db');
 
 module.exports = {
     create: create,
@@ -6,6 +6,7 @@ module.exports = {
     find: find,
     update: update,
     remove: remove,
+    removeByQuestionId: removeByQuestionId,
     query: query
 };
 
@@ -32,6 +33,9 @@ function update (id, choice) {
 
 function remove (id) {
     return db('choices').del().where({ id: id });
+}
+function removeByQuestionId (questionId) {
+    return db('questions').del().where({ question_id: questionId });
 }
 
 // params = { id: 1 }`

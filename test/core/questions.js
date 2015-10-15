@@ -1,5 +1,5 @@
 var should = require('should');
-var Questions = require('../../core/questions');
+var Questions = require('../../core/questions/dal');
 var db = require('../../db');
 
 describe('questions', function() {
@@ -55,6 +55,10 @@ describe('questions', function() {
 			})
 
 		});
+		it('should throw error on invalid text', function (done) {
+			var text = '';
+			return Questions.create({ text: text });
+		})
 	});
 	describe('#remove', function () {
 		beforeEach(function (done) {

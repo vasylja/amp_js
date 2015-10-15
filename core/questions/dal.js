@@ -1,5 +1,6 @@
-var db = require('../db');
+var db = require('../../db');
 //var Promise = require('bluebird');
+var validator = require('validator');
 
 module.exports = {
 	create: create,
@@ -9,8 +10,11 @@ module.exports = {
 	remove: remove
 };
 
-// params = { name: 'Test name' }
+// params = { text: 'Test name' }
 function create (params) {
+	if ( !validator.isLength(params.text, 2, 1000) ) {
+		throw new Error('Text should be in range 2, 1000');
+	}
 	return db('questions').insert(params).returning('id').then(function (array) {
 		return +array[0];
 	});
@@ -25,12 +29,13 @@ function findAll () {
 function find (id) {
 	//return db('questions').where('id', id); // [ { id: 1} ]
 	//return db('questions').where('id', id).first(); // { id: 1 }
-	return db('questions').where({ id: id }).first().then(function (question) {
-		return db('choices').where({ question_id: question.id }).then(function (choices) {
-			question.choices = choices;
-			return question;
-		})
-	});
+	return db('v_questions').where({ id: id }).first();
+	//return db('questions').where({ id: id }).first().then(function (question) {
+	//	return db('choices').where({ question_id: question.id }).then(function (choices) {
+	//		question.choices = choices;
+	//		return question;
+	//	})
+	//});
 }
 
 function update (id, question) {
