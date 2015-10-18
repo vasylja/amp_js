@@ -40,3 +40,4 @@ alter default privileges in schema public grant all privileges on sequences to a
 -- run create table scripts
 
 \i ./tables.sql
+\i ./views.sql
