@@ -15,3 +15,7 @@ sudo cp /vagrant/postgres/pg_hba.conf /etc/postgresql/9.4/main
 sudo service postgres restart
 
 sudo apt-get update
+
+echo "# Setting for the new UTF-8 terminal support" >> ~/.bashrc
+echo "export LC_CTYPE=en_US.UTF-8" >> ~/.bashrc
+echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc
