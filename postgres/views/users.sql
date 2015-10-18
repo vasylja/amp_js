@@ -37,6 +37,9 @@ select
 			questions q on q.id = a.question_id
 		left join
 			choices c on c.id = a.choice_id
+		-- todo: add user_id to answers table and make filter here by user_id (uncomment below)
+--		where
+--			a.user_id = u.id
 	) row ) as answers
 from
 -- We give to table users alias 'u' so we can type less text in query users.id -> u.id
