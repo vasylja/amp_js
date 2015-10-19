@@ -11,6 +11,7 @@ module.exports = {
 	create: create,
 	findAll: findAll,
 	find: find,
+	findByEmail: findByEmail,
 	update: update,
 	remove: remove,
 	query: query
@@ -29,6 +30,9 @@ function findAll () {
 function find (id) {
 	// Here we use view ( for more information );
 	return db('v_users').where('id', id).first();
+}
+function findByEmail (email) {
+	return db('v_users').where('email', email).first();
 }
 function update (id, params) {
 	// same as for insert
