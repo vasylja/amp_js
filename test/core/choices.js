@@ -1,5 +1,5 @@
 var should = require('should');
-var Choices = require('../../core/choices');
+var Choices = require('../../core/choices/dal.js');
 var db = require('../../db');
 
 describe('choices', function() {
@@ -85,9 +85,27 @@ describe('choices', function() {
                     })
             }.bind(this))
         });
+        it('should not query choice by empty text', function (done) {
+            return Choices.remove(this.choice.id).then(function () {
+                return db('choices').where({ text: '' }).first()
+                    .then(function (choice) {
+                        should(choice).not.ok;
+                        done();
+                    })
+            }.bind(this))
+        });
         it('should query choice by text and id', function (done) {
             return Choices.remove(this.choice.id).then(function () {
                 return db('choices').where({ id: this.choice.id, text: text }).first()
+                    .then(function (choice) {
+                        should(choice).ok;
+                        done();
+                    })
+            }.bind(this))
+        });
+        it('should query choice only by id', function (done) {
+            return Choices.remove(this.choice.id).then(function () {
+                return db('choices').where({ id: this.choice.id, text: '' }).first()
                     .then(function (choice) {
                         should(choice).ok;
                         done();
@@ -146,6 +164,10 @@ describe('choices', function() {
                 });
             })
 
+        });
+        it('should throw error on invalid text', function (done) {
+            var text = '';
+            return Choices.create({ text: text });
         });
     });
     describe('#remove', function () {
