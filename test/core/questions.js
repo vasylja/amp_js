@@ -57,7 +57,9 @@ describe('questions', function() {
 		});
 		it('should throw error on invalid text', function (done) {
 			var text = '';
-			return Questions.create({ text: text });
+			return Questions.create({ text: text }).then(function() {
+				done();
+			});
 		})
 	});
 	describe('#remove', function () {

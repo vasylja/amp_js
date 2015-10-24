@@ -166,8 +166,10 @@ describe('choices', function() {
 
         });
         it('should throw error on invalid text', function (done) {
-            var text = '';
-            return Choices.create({ text: text });
+            var text = 'asd23sdf';
+            return Choices.create({ text: text }).then(function() {
+                done(); 
+            });
         });
     });
     describe('#remove', function () {
