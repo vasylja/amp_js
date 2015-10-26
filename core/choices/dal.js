@@ -21,11 +21,12 @@ function create (params) {
     });
 }
 
-function findAll () {
-    //return db.select('*').from('choices');
-    //return db.select( ['id', 'name'] ).from('choices');
-    return db('choices');
-}
+//do not need
+//function findAll () {
+//    //return db.select('*').from('choices');
+//    //return db.select( ['id', 'name'] ).from('choices');
+//    return db('choices');
+//}
 
 function find (id) {
     return db('choices').where({ id: id }).first(); // { id: 1 }

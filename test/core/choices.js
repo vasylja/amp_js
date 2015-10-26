@@ -9,28 +9,29 @@ describe('choices', function() {
 		});
 	});
 
-    describe('#findAll()', function() {
 
-		it('should return all choices', function (done) {
-			return Choices.findAll().then(function (choices) {
-                choices.should.be.ok;
-				done();
-			})
-		});
-		it('should return array', function (done) {
-			return Choices.findAll().then(function (choices) {
-                choices.should.be.instanceOf(Array);
-				done();
-			})
-		});
-		it('should return array of length one', function (done) {
-			return Choices.findAll().then(function (choices) {
-                choices.should.have.property('length');
-                choices.length.should.be.equal(0);
-				done();
-			});
-		});
-	});
+    //describe('#findAll()', function() {
+    //
+	//	it('should return all choices', function (done) {
+	//		return Choices.findAll().then(function (choices) {
+     //           choices.should.be.ok;
+	//			done();
+	//		})
+	//	});
+	//	it('should return array', function (done) {
+	//		return Choices.findAll().then(function (choices) {
+     //           choices.should.be.instanceOf(Array);
+	//			done();
+	//		})
+	//	});
+	//	it('should return array of length one', function (done) {
+	//		return Choices.findAll().then(function (choices) {
+     //           choices.should.have.property('length');
+     //           choices.length.should.be.equal(0);
+	//			done();
+	//		});
+	//	});
+	//});
 
     describe('#find()', function () {
         beforeEach(function (done) {
@@ -166,9 +167,9 @@ describe('choices', function() {
 
         });
         it('should throw error on invalid text', function (done) {
-            var text = 'asd23sdf';
+            var text = '';
             return Choices.create({ text: text }).then(function() {
-                done(); 
+                done();
             });
         });
     });
