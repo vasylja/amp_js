@@ -3,7 +3,7 @@ var validator = require('validator');
 
 module.exports = {
     create: create,
-    findAll: findAll,
+   // findAll: findAll,
     find: find,
     update: update,
     remove: remove,
