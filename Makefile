@@ -8,4 +8,7 @@ drop-db:
 views:
 	cd postgres && psql -q amp root < views.sql
 
+test-data:
+	cd postgres && psql -q amp amp < test-data.sql
+
 recreate-db: disconnect-db drop-db create-db
