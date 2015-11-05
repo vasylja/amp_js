@@ -29,12 +29,25 @@ function getUser (req, res) {
 	});
 }
 
-function createUser () {
+function createUser (req, res) {
 	// create user and return created entity
+	
+	// req.params ( choices/:id ) = id
+	// req.query ( choices?limit=10&offset=20 ) = { limit: 10, offset: 20 }
+	// req.body ( form, json )
+	console.log(req.params);
+	console.log(req.query);
+	console.log(req.body);
+	res.json({});
+
 }
 
-function updateUser () {
+function updateUser (req, res) {
 	// update user by id
+	console.log(req.params);
+	console.log(req.query);
+	console.log(req.body);
+	res.json({});
 }
 
 function deleteUser () {

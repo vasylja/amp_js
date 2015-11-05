@@ -1,9 +1,11 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
 var usersAPI = require('./users');
 var choicesAPI = require('./choices');
 
+app.use('*', bodyParser.json())
 app.get('/', function(req, res){
 	res.send('hello world');
 });
@@ -18,6 +20,8 @@ app.get('/choices/:id', choicesAPI.getChoice);
 app.post('/choices', choicesAPI.createChoice);
 app.put('/choices/:id', choicesAPI.updateChoice);
 app.delete('/choices/:id', choicesAPI.removeChoice);
+app.get('/choices', choicesAPI.queryChoices);
+app.delete('/choices', choicesAPI.removeByQuestionId);
 // method for choiceAPI.queryChoice
 // method for choicesAPI.removeByQuestionId
 
