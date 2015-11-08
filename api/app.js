@@ -22,8 +22,6 @@ app.put('/choices/:id', choicesAPI.updateChoice);
 app.delete('/choices/:id', choicesAPI.removeChoice);
 app.get('/choices', choicesAPI.queryChoices);
 app.delete('/choices', choicesAPI.removeByQuestionId);
-// method for choiceAPI.queryChoice
-// method for choicesAPI.removeByQuestionId
 
 // REST
 //

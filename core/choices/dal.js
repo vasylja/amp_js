@@ -40,7 +40,7 @@ function remove (id) {
     return db('choices').del().where({ id: id });
 }
 function removeByQuestionId (questionId) {
-    return db('questions').del().where({ question_id: questionId });
+    return db('choices').del().where({ question_id: questionId });
 }
 
 // params = { id: 1 }
