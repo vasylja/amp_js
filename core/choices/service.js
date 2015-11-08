@@ -30,7 +30,7 @@ function remove (id) {
 }
 
 function removeByQuestionId (questionId) {
-    return choicesDal.remove(questionId);
+    return choicesDal.removeByQuestionId(questionId);
 }
 
 function query (params) {
