@@ -5,9 +5,16 @@ var bodyParser = require('body-parser');
 var usersAPI = require('./users');
 var choicesAPI = require('./choices');
 
+var path = require('path');
+
+// http://expressjs.com/starter/static-files.html
+app.use('/angular', express.static('node_modules/angular'));
+app.use('/angular-route', express.static('node_modules/angular-route'));
+app.use('/app', express.static('front'));
+
 app.use('*', bodyParser.json())
-app.get('/', function(req, res){
-	res.send('hello world');
+app.get('/', function(req, res) {
+	res.sendFile(path.join(__dirname + '/../front/index.html'));
 });
 
 app.get('/users', usersAPI.getUsers);

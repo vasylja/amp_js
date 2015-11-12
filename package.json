@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/vasylja/amp_js#readme",
   "dependencies": {
+    "angular": "^1.4.7",
+    "angular-route": "^1.4.7",
     "bluebird": "^3.0.5",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",

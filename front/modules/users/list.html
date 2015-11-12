@@ -1,0 +1,8 @@
+<h1>Hello from users list from template</h1>
+<h3>We have total count of {{ totalCount }} users!</h3>
+<ul>
+	<li ng-repeat="user in users">
+		<h3>{{ user.id }} - {{ user.name }}</h3>
+		<p>{{ user.email }}</p>
+	</li>
+</ul>
