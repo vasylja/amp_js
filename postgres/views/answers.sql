@@ -1,14 +1,12 @@
 create view v_answers as
 select
-	a.*,
+	a.id,
 
-	q.id as question_id,
+	a.choice_id,
+	a.user_id,
 
-	c.id as choice_id
-
+	c.question_id as question_id
 from
 	answers a
 left join
 	choices c on c.id = a.choice_id
-left join
-    questions q on q.id = c.question_id

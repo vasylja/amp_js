@@ -36,9 +36,9 @@ select
 		-- more on joins http://www.skillz.ru/dev/php/article-Obyasnenie_SQL_obedinenii_JOIN_INNER_OUTER.html
 		-- and http://www.postgresql.org/docs/9.4/static/queries-table-expressions.html#QUERIES-JOIN
 		left join
-			questions q on q.id = a.question_id
-		left join
 			choices c on c.id = a.choice_id
+		left join
+			questions q on q.id = c.question_id
 		-- todo: add user_id to answers table and make filter here by user_id (uncomment below)
 		where
 			a.user_id = u.id
