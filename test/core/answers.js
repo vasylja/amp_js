@@ -1,5 +1,5 @@
 var should = require('should');
-var Answers = require('../../core/answers');
+var Answers = require('../../core/answers/dal');
 var db = require('../../db');
 
 describe('answers', function() {
@@ -73,25 +73,20 @@ describe('answers', function() {
     });
 
     describe('#update()', function () {
-        before(function (done) {
-            this.questionId = null;
-            return db('questions').insert({ text: 'this is my question' }).then(function () {
-                done();
-            });
-        });
         beforeEach(function (done) {
             this.answer = {};
-            return db('answers').insert({ question_id: this.questionId }).returning('id').then(function (arr) {
+            return db('answers').insert({ question_id: 45 , choice_id: 9}).returning('id').then(function (arr) {
                 this.answer.id = arr[0];
                 done();
             }.bind(this));
         });
         it('should update answer', function (done) {
-            return Answers.update(this.answer.id, {'question_id': 2}).then(function () {
+            return Answers.update(this.answer.id, {question_id: '46', choice_id: '2'}).then(function () {
                 return db('answers').where({ id: this.answer.id }).first()
                     .then(function (answer) {
                         answer.should.be.ok;
-                        answer.question_id.should.be.equal(this.answer.id+'');
+                        answer.question_id.should.be.equal('46');
+                        answer.choice_id.should.be.equal('2');
                         done();
                     })
             }.bind(this))

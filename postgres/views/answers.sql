@@ -9,6 +9,6 @@ select
 from
 	answers a
 left join
-	questions q on q.id = a.question_id
-left join
 	choices c on c.id = a.choice_id
+left join
+    questions q on q.id = c.question_id

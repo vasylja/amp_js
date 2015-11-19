@@ -59,6 +59,6 @@ function query (params) {
     return builder;
 }
 
-//query({'id': 2}).then(function (result) {
-//    console.log(result);
-//});
+query({'id': 2}).then(function (result) {
+    console.log(result);
+});

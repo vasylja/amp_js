@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 
 var usersAPI = require('./users');
 var choicesAPI = require('./choices');
+var answersAPI = require('./answers');
 
 var path = require('path');
 
@@ -29,6 +30,12 @@ app.put('/choices/:id', choicesAPI.updateChoice);
 app.delete('/choices/:id', choicesAPI.removeChoice);
 app.get('/choices', choicesAPI.queryChoices);
 app.delete('/choices', choicesAPI.removeByQuestionId);
+
+app.get('/answers/:id', answersAPI.getAnswer);
+app.post('/answers', answersAPI.createAnswer);
+app.put('/answers/:id', answersAPI.updateAnswer);
+app.delete('/answers/:id', answersAPI.removeAnswer);
+app.get('/answers', answersAPI.queryAnswer);
 
 // REST
 //
