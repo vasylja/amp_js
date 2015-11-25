@@ -3,7 +3,7 @@ var answersService = require('../core/answers/service');
 module.exports = {
     getAnswer: getAnswer,
     createAnswer: createAnswer,
-    findAnswer: findAnswer,
+    //findAnswer: findAnswer,
     updateAnswer: updateAnswer,
     removeAnswer: removeAnswer,
     queryAnswer: queryAnswer

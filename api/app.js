@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var usersAPI = require('./users');
 var choicesAPI = require('./choices');
 var answersAPI = require('./answers');
+var questionsAPI = require('./questions');
 
 var path = require('path');
 
@@ -36,6 +37,9 @@ app.post('/answers', answersAPI.createAnswer);
 app.put('/answers/:id', answersAPI.updateAnswer);
 app.delete('/answers/:id', answersAPI.removeAnswer);
 app.get('/answers', answersAPI.queryAnswer);
+
+//app.get('/questions', usersAPI.getQuestions);
+app.post('/questions', questionsAPI.createQuestion);
 
 // REST
 //
