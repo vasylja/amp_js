@@ -18,6 +18,8 @@
   "homepage": "https://github.com/vasylja/amp_js#readme",
   "dependencies": {
     "angular": "^1.4.7",
+    "angular-mocks": "1.4.x",
+    "angular-resource": "1.4.x",
     "angular-route": "^1.4.7",
     "bluebird": "^3.0.5",
     "body-parser": "^1.14.1",
@@ -26,6 +28,7 @@
     "knex": "^0.8.6",
     "lodash": "^3.10.1",
     "mocha": "^2.3.3",
+    "path": "^0.12.7",
     "pg": "^4.4.2",
     "validator": "^4.1.0"
   },

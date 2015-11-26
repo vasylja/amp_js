@@ -14,7 +14,7 @@ app.use('/angular', express.static('node_modules/angular'));
 app.use('/angular-route', express.static('node_modules/angular-route'));
 app.use('/app', express.static('front'));
 
-app.use('*', bodyParser.json())
+app.use('*', bodyParser.json());
 app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/../front/index.html'));
 });
@@ -38,7 +38,7 @@ app.put('/answers/:id', answersAPI.updateAnswer);
 app.delete('/answers/:id', answersAPI.removeAnswer);
 app.get('/answers', answersAPI.queryAnswer);
 
-//app.get('/questions', usersAPI.getQuestions);
+app.get('/questions', questionsAPI.getQuestions);
 app.post('/questions', questionsAPI.createQuestion);
 
 // REST
