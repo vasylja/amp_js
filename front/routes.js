@@ -3,5 +3,5 @@ angular.module('app').config(['$routeProvider', function ($routeProvider) {
 		.when('/users', { templateUrl: '/app/modules/users/list.html', controller: 'UsersListController' })
 		.when('/users', { templateUrl: '/app/modules/users/view.html', controller: 'UsersViewController' })
 		.when('/questions', {templateUrl: '/app/modules/questions/actions/list/template.html', controller: 'QuestionsListController'})
-		.when('/questions/create', {templateUrl: '/app/modules/questions/create/template.html', controller: 'CreateQuestionController'})
+		.when('/questions/create', {templateUrl: '/app/modules/questions/actions/create/template.html', controller: 'CreateQuestionController'})
 }]);

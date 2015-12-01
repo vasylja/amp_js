@@ -1,28 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="app">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello, this is my amp_js APP</title>
-    <script src="/angular/angular.js"></script>
-    <script src="/angular-route/angular-route.js"></script>
-    <script src="/app/main.js"></script>
-    <script src="/app/routes.js"></script>
-    <script src="/app/modules/users/list.js"></script>
-    <script src="/app/modules/users/view.js"></script>
-    <meta charset="UTF-8">
-
-</head>
-<body>
-    <div ng-controller="CreateQuestionController">
-        <form novalidate class="simple-form">
-            Question: <input type="text" ng-model="question.text" /><br />
-            <!--E-mail: <input type="email" ng-model="user.email" /><br />-->
-            <!--Gender: <input type="radio" ng-model="user.gender" value="male" />male-->
-            <!--<input type="radio" ng-model="user.gender" value="female" />female<br />-->
-            <!--<input type="button" ng-click="reset()" value="Reset" />-->
-            <input type="submit" ng-click="save(question)" value="Save" />
-        </form>
-
-    </div>
-</body>
-</html>
+ <form novalidate class="simple-form">
+    Question: <input type="text" ng-model="question.text" /><br />
+    Choices:
+     <div class="form-group" ng-repeat="choice in question.choices">
+         choice name: <input type="text" class="form-control" name="text" ng-model="choice.text">
+     </div>
+     <input type="submit" ng-click="addChoice()" value="Add Choice" />
+    <input type="submit" ng-click="save(question)" value="Save" />
+ </form>
