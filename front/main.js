@@ -1,2 +1,2 @@
-angular.module('app', ['ngRoute']).run();
+angular.module('app', ['ngRoute', 'ngResource']).run();
 
