@@ -9,15 +9,17 @@ var questionsAPI = require('./questions');
 
 var path = require('path');
 
+app.use('*', bodyParser.json());
+app.get('/', function(req, res) {
+	res.sendFile(path.join(__dirname + '/../front/index.html'));
+});
+
 // http://expressjs.com/starter/static-files.html
 app.use('/angular', express.static('node_modules/angular'));
 app.use('/angular-route', express.static('node_modules/angular-route'));
 app.use('/app', express.static('front'));
 
-app.use('*', bodyParser.json());
-app.get('/', function(req, res) {
-	res.sendFile(path.join(__dirname + '/../front/index.html'));
-});
+
 
 app.get('/users', usersAPI.getUsers);
 app.get('/users/:id', usersAPI.getUser); 
@@ -40,6 +42,8 @@ app.get('/answers', answersAPI.queryAnswer);
 
 app.get('/questions', questionsAPI.getQuestions);
 app.post('/questions', questionsAPI.createQuestion);
+
+
 
 // REST
 //

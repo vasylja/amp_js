@@ -5,4 +5,3 @@ angular.module('app').controller('UsersViewController', [
 		$scope.username = $routeParams.username;
 	}
 ]);
-A

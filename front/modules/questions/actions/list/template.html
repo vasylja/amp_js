@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="app">
-<head>
-    <meta charset="UTF-8">
-    <title>Questions</title>
-    <script src="/angular/angular.js"></script>
-    <script src="/angular-route/angular-route.js"></script>
-    <script src="/app/main.js"></script>
-    <script src="/app/routes.js"></script>
-    <script src="/app/modules/users/list.js"></script>
-    <script src="/app/modules/users/view.js"></script>
-    <meta charset="UTF-8">
 
-</head>
-<body>
-    <div ng-controller="QuestionsListController">
-        <li ng-repeat="question in questions">
-            <h3>{{ question.id }}</h3>
-            <p>{{ question.text }}</p>
-        </li>
-    </div>
-</body>
-</html>
+<div>
+    <li ng-repeat="question in questions">
+        <h3>{{ question.id }}</h3>
+        <p>{{ question.text }}</p>
+    </li>
+</div>
