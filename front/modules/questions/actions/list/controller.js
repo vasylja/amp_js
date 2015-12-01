@@ -1,7 +1,6 @@
-angular.module('app').controller('CreateQuestionController', [
+angular.module('app').controller('QuestionsListController', [
     '$scope', '$routeParams', 'QuestionsListService',
-    function ($scope, $routeParams) {
+    function ($scope, $routeParams, QuestionsListService) {
         $scope.questions = QuestionsListService.query();
     }
 ]);
-
