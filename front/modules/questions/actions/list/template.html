@@ -1,7 +1,19 @@
-
-<div>
-    <li ng-repeat="question in questions">
-        <h3>{{ question.id }}</h3>
-        <p>{{ question.text }}</p>
-    </li>
+<div class="container">
+    <div><h3>Questions list</h3></div>
+    <table class="table table-striped custab" style="min-width:400px;">
+        <thead>
+        <tr>
+            <td>
+                Text
+            </td>
+            <td>
+                Actions
+            </td>
+        </tr>
+        </thead>
+        <tr ng-repeat="question in questions">
+            <td>{{ question.text }}</td>
+            <td>Edit|Answer</td>
+        </tr>
+    </table>
 </div>
