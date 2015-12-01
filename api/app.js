@@ -16,6 +16,8 @@ app.get('/', function(req, res) {
 
 // http://expressjs.com/starter/static-files.html
 app.use('/angular', express.static('node_modules/angular'));
+app.use('/jquery', express.static('node_modules/jquery'));
+app.use('/bootstrap', express.static('node_modules/bootstrap'));
 app.use('/angular-resource', express.static('node_modules/angular-resource'));
 app.use('/angular-route', express.static('node_modules/angular-route'));
 app.use('/app', express.static('front'));
