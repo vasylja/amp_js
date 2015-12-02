@@ -22,8 +22,6 @@ app.use('/angular-resource', express.static('node_modules/angular-resource'));
 app.use('/angular-route', express.static('node_modules/angular-route'));
 app.use('/app', express.static('front'));
 
-
-
 app.get('/users', usersAPI.getUsers);
 app.get('/users/:id', usersAPI.getUser); 
 app.post('/users', usersAPI.createUser);
@@ -43,9 +41,10 @@ app.put('/answers/:id', answersAPI.updateAnswer);
 app.delete('/answers/:id', answersAPI.removeAnswer);
 app.get('/answers', answersAPI.queryAnswer);
 
+app.get('/questions/:id', questionsAPI.getQuestion);
 app.get('/questions', questionsAPI.getQuestions);
 app.post('/questions', questionsAPI.createQuestion);
-
+app.put('/questions/:id', questionsAPI.updateQuestion);
 
 
 // REST

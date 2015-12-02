@@ -3,6 +3,8 @@ var questionsService = require('../core/questions/service');
 module.exports = {
     createQuestion: createQuestion,
     getQuestions: getQuestions,
+    updateQuestion: updateQuestion,
+    getQuestion: getQuestion
 };
 
 //curl -X POST 'http://localhost:3000/questions' -d '{ "text": "Question 105", "choices": [{"text":"one 105"}, {"text": "two 105"}, {"text": "three 105"} ]}' -H "Content-Type: application/json" -v
@@ -23,5 +25,20 @@ function createQuestion(req, res) {
 function getQuestions(req, res) {
     return questionsService.findAll().then(function (questions) {
         res.json(questions);
+    });
+}
+
+function updateQuestion(req, res) {
+    var question = req.body;
+    return questionsService.update(question).then(function (question) {
+        res.json(question);
+        res.end('Question has been updated!');
+    });
+}
+
+function getQuestion(req, res) {
+    var id = req.params.id;
+    return questionsService.find(id).then(function (question) {
+        res.json(question);
     });
 }
