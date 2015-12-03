@@ -18,12 +18,13 @@
                     </div>
                     <label>Choices</label>
                     <div class="form-group" ng-repeat="choice in question.choices">
-                        <span>
-                            Choice Text <input type="text" class="form-control" name="text" ng-model="choice.text">
-                        </span>
-                        <!--<a href="" class="remove-choice" onclick="$(this).prev().remove()">-->
-                            <!--<span class="glyphicon glyphicon-remove"></span>-->
-                        <!--</a>-->
+                            <span>
+                                Choice Text <input type="text" class="form-control" style="display:inline" name="text" ng-model="choice.text">
+                            </span>
+                            <!--  onclick="$(this).prev().remove()"-->
+                            <a href="" class="remove-choice" ng-click="removeChoice(choice)">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
                     </div>
                     <button type="submit" class="btn btn-xs btn-success " ng-click="addChoice()">
                         <span class="glyphicon glyphicon-plus"></span>
