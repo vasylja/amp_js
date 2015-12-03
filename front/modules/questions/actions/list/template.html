@@ -4,6 +4,9 @@
         <thead>
         <tr>
             <td>
+                Id
+            </td>
+            <td>
                 Text
             </td>
             <td>
@@ -12,10 +15,11 @@
         </tr>
         </thead>
         <tr ng-repeat="question in questions">
+            <td>{{ question.id }}</td>
             <td>{{ question.text }}</td>
             <td>
                 <a href="{{path}}/{{question.id}}">Edit</a>
-                Answer
+                |Answer|Statistics
             </td>
         </tr>
     </table>
