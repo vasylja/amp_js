@@ -1,6 +1,6 @@
 angular.module('app').controller('CreateQuestionController', [
-    '$scope', '$routeParams', 'CreateQuestionService',
-    function ($scope, $routeParams, CreateQuestionService) {
+    '$scope', '$routeParams','$window' , 'CreateQuestionService',
+    function ($scope, $routeParams, $window, CreateQuestionService) {
         $scope.question = {
             text: '',
             choices: []
@@ -19,6 +19,7 @@ angular.module('app').controller('CreateQuestionController', [
         };
         $scope.save = function(question) {
             CreateQuestionService.save(question);
+            $window.location.href = '/#/questions';
         }
     }
 ]);

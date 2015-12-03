@@ -19,9 +19,8 @@
                     <label>Choices</label>
                     <div class="form-group" ng-repeat="choice in question.choices">
                             <span>
-                                Choice Text <input type="text" class="form-control" style="display:inline" name="text" ng-model="choice.text">
+                                Choice Text <input type="text" class="form-control" style="display:table-row" name="text" ng-model="choice.text">
                             </span>
-                            <!--  onclick="$(this).prev().remove()"-->
                             <a href="" class="remove-choice" ng-click="removeChoice(choice)">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </a>
