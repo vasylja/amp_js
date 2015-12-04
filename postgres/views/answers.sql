@@ -3,7 +3,7 @@ select
 	a.id,
 
 	a.choice_id,
-	a.user_id,
+--	a.user_id,
 
 	c.question_id as question_id
 from

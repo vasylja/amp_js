@@ -19,7 +19,7 @@ select
 		from
 			questions q
 
-		where q.user_id = u.id
+--		where q.user_id = u.id
 	) row ) as questions,
 
 	-- same as above
@@ -40,8 +40,8 @@ select
 		left join
 			questions q on q.id = c.question_id
 		-- todo: add user_id to answers table and make filter here by user_id (uncomment below)
-		where
-			a.user_id = u.id
+--		where
+--			a.user_id = u.id
 	) row ) as answers
 from
 -- We give to table users alias 'u' so we can type less text in query users.id -> u.id
