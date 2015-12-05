@@ -11,29 +11,30 @@
 
                 </div>
             </div>
-
-                <form >
-                    <div class="form-group">
-                        Question Text<input type="text" ng-model="question.text" class="form-control">
+            <!--<div ng-include="'../../basic_templates/questions_form.html'"></div>-->
+            <form name="questionCreation"  novalidate>
+                <div class="form-group" ng-class="{ 'has-error' : questionCreation.questionText.$invalid && submitted }">
+                    Question Text<input type="text" name="questionText" ng-model="question.text" class="form-control" required ng-minlength="3" ng-maxlength="50">
+                    <p ng-show="questionCreation.questionText.$invalid && submitted" class="help-block">Text Length should be in Range 3 and 50</p>
+                </div>
+                <label>Choices</label>
+                <div class="form-group" ng-repeat="choice in question.choices track by $index">
+                    <div ng-class="{ 'has-error' : questionCreation.text{{$index}}.$invalid && submitted }">
+                        Choice Text <input type="text" class="form-control" style="display:table-row" name="text{{$index}}" ng-model="choice.text" required>
+                        <p ng-show="questionCreation.text{{$index}}.$invalid && submitted" class="help-block">Text should not be blank.</p>
+                        <a href="" class="remove-choice" ng-click="removeChoice(choice)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
                     </div>
-                    <label>Choices</label>
-                    <div class="form-group" ng-repeat="choice in question.choices">
-                            <span>
-                                Choice Text <input type="text" class="form-control" style="display:table-row" name="text" ng-model="choice.text">
-                            </span>
-                            <a href="" class="remove-choice" ng-click="removeChoice(choice)">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </a>
-                    </div>
-                    <button type="submit" class="btn btn-xs btn-success " ng-click="addChoice()">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </button>
+                </div>
+                <button type="submit" class="btn btn-xs btn-success " ng-click="addChoice()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
 
-                    <div class="form-group" style="margin-top:10px">
-                        <input type="submit" class="btn btn-primary " ng-click="save(question)" value="Save" />
-                    </div>
-                </form>
-
+                <div class="form-group" style="margin-top:10px">
+                    <input type="submit" class="btn btn-primary " ng-click="save(question, questionCreation.$valid)" value="Save" />
+                </div>
+            </form>
         </div>
     </div>
 </div>
