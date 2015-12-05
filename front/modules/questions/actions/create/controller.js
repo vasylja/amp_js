@@ -10,17 +10,18 @@ angular.module('app').controller('CreateQuestionController', [
         };
         $scope.removeChoice = function(choice) {
             $scope.question.choices.forEach(function(item, i, arr) {
-                console.log(item);
-                console.log(choice);
                if(item===choice) {
                    arr.splice(i, 1);
                }
             });
         };
-        $scope.save = function(question) {
-            CreateQuestionService.save(question);
-            $window.location.href = '/#/questions';
-        }
+        $scope.save = function(question, isValid) {
+            $scope.submitted = true
+            if(isValid) {
+                CreateQuestionService.save(question);
+                $window.location.href = '/#/questions';
+            }
+        };
     }
 ]);
 

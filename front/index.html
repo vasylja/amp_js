@@ -19,28 +19,23 @@
     <script src="/app/modules/questions/actions/find/service.js"></script>
     <script src="/app/modules/questions/actions/update/service.js"></script>
     <script src="/app/modules/questions/actions/update/controller.js"></script>
-    <!--<script type="text/javascript">-->
-        <!--$( ".remove-choice" ).click(function() {-->
-            <!--alert( "sdfdsfdsf" );-->
-        <!--});-->
-    <!--</script>-->
     <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css"/>
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">AMP</a>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">AMP</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#/questions/create">Create Question</a></li>
+                    <li><a href="#/questions">Questions List</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#/questions/create">Create Question</a></li>
-                <li><a href="#/questions">Questions List</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
 	<ng-view>
 	</ng-view>
 </body>
