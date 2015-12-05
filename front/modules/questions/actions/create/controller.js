@@ -16,7 +16,7 @@ angular.module('app').controller('CreateQuestionController', [
             });
         };
         $scope.save = function(question, isValid) {
-            $scope.submitted = true
+            $scope.submitted = true;
             if(isValid) {
                 CreateQuestionService.save(question);
                 $window.location.href = '/#/questions';
