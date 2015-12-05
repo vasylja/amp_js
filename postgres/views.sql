@@ -20,4 +20,5 @@ $body$;
 \i ./views/users.sql
 
 \i ./views/answers.sql
+\i ./views/statistic.sql
 

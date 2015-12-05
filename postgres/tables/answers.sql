@@ -4,4 +4,5 @@ create table answers (
 	choice_id bigint references choices
 
 
+
 );
