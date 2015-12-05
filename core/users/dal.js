@@ -63,6 +63,9 @@ function query (params) {
 	return builder;
 }
 
+//function findUserQuestions (id){
+//
+//}
 
 
 // to test this i usually add function call on the bottom of the file and then delete it
