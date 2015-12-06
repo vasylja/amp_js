@@ -1,10 +1,27 @@
+
+<!--<div id="chartContainer" style="height: 300px; width: 100%;">-->
+<!--</div>   </table>-->
+<!--</div>>-->
 <div class="container">
     <div><h3>Statistic</h3></div>
     <table class="table table-striped custab" style="min-width:400px;">
-
+        <thead>
+        <tr>
+            <td>
+                Choice Id
+            </td>
+            <td>
+                Choice Text
+            </td>
+            <td>
+                Number of votes
+            </td>
+        </tr>
+        </thead>
         <tr ng-repeat="choice in statistic">
-
-            <td>{{ choice.text }}</td>
+            <td>{{ choice.choice_id }}</td>
+            <td>{{ choice.choice_text }}</td>
+            <td>{{ choice.count}}</td>
 
         </tr>
     </table>
