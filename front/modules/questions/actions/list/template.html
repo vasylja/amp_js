@@ -18,8 +18,10 @@
             <td>{{ question.id }}</td>
             <td>{{ question.text }}</td>
             <td>
-                <a href="{{path}}/{{question.id}}">Edit</a>
-                |Answer|Statistics
+                <a href="{{editPath}}/{{question.id}}">Edit</a>
+                |
+                <a href="{{answerPath}}/{{question.id}}">Answer</a>
+                |Statistics
             </td>
         </tr>
     </table>

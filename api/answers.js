@@ -20,9 +20,9 @@ function getAnswer(req, res) {
 function createAnswer(req, res) {
     var params = {
         choice_id: req.body.choice_id,
-        user_id: req.body.user_id
+        question_id: req.body.question_id
     };
-    return answersService.create(params).then(function () {
+    return answersService.create(params).then(function (answer) {
         res.json(answer);
         res.end('Answer has been created!');
     });
