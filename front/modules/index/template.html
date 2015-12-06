@@ -3,7 +3,7 @@
     <form name="form"  novalidate>
         <h2>Enter id and go to ANSWER PAGE</h2>
         <div class="form-group" ng-class="{ 'has-error' : form.id.$invalid && submitted }">
-            Id<input type="text" name="id" class="form-control" ng-model="id" required ng-minlength="3" ng-maxlength="50">
+            Id<input type="text" name="id" class="form-control" ng-model="id" required>
             <p ng-show="form.id.$invalid && submitted" class="help-block">Id Should be not black</p>
         </div>
         <div class="form-group" style="margin-top:10px">

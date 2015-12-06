@@ -14,10 +14,13 @@
 
             <form name="answerForm" novalidate>
                 <h3>{{question.text}}</h3>
+
                 <div class="form-group" ng-repeat="choice in question.choices track by $index">
-                    <label>{{choice.text}}</label>
-                    <input type="radio" class="form-control" ng-model="formData.choice_id" name="name" value="{{choice.id}}" required/>
+                    <label><input type="radio" ng-model="formData.choice_id" name="name" value="{{choice.id}}" required> {{choice.text}}</label>
+                     <!--<input type="radio" ng-model="formData.choice_id" name="name" value="{{choice.id}}" required/>-->
+                     <!--<label>{{choice.text}}</label>-->
                 </div>
+
                 <p ng-show="answerForm.name.$invalid && submitted" class="help-block">Choose an Answer!</p>
                 <div class="form-group" style="margin-top:10px">
                     <input type="submit" class="btn btn-primary " ng-click="answer(answerForm.$valid)" value="Save" />

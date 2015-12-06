@@ -9,6 +9,7 @@ angular.module('app').controller('AnswerOnQuestionController', [
             $scope.submitted = true;
             if(isValid) {
                 AnswerOnQuestionService.save($scope.formData);
+                $window.location.href = '/#/questions';
             }
 
         }
