@@ -35,7 +35,7 @@ insert into answers(question_id,choice_id) values(1,2);
 insert into answers(question_id,choice_id) values(1,2);
 insert into answers(question_id,choice_id) values(1,2);
 insert into answers(question_id,choice_id) values(1,2);
-insert into answers(question_id,choice_id) values(1,8);
+insert into answers(question_id,choice_id) values(1,3);
 
 
 

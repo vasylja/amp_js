@@ -46,7 +46,7 @@ function getQuestion(req, res) {
 
 function getStatistic(req, res) {
     var id = req.params.id;
-    return questionsService.countChoices(id).then(function (answers) {
-        res.json(answers);
+    return questionsService.countChoices(id).then(function (statistic) {
+        res.json(statistic);
     });
 }

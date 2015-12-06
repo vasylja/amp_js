@@ -61,7 +61,9 @@ function query (params) {
 	return builder;
 }
 function 	countChoices(id	){
-	return db('v_statis').select('choice_id').count('id').groupBy('choice_id').where({ question_id: id });
+	var builder = db('v_statis');
+	builder.select('choice_id').select('choice_text').count('id').groupBy('choice_id','choice_text').where({ question_id: id });
+	return builder;
 }
 //query({'text': 'text'}).then(function (result) {
 //    console.log(result);
