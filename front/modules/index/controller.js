@@ -4,7 +4,7 @@ angular.module('app').controller('HomeController', [
         $scope.go = function(id, isValid) {
             $scope.submitted = true;
             if(isValid) {
-               // $window.location.href = 'REDIRECT_TO_MAX_PAGE';
+               $window.location.href = '/#/questions/answer/' + id;
             }
         };
     }

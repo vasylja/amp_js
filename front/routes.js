@@ -5,6 +5,7 @@ angular.module('app').config(['$routeProvider', function ($routeProvider) {
 		.when('/questions', {templateUrl: '/app/modules/questions/actions/list/template.html', controller: 'QuestionsListController'})
 		.when('/questions/create', {templateUrl: '/app/modules/questions/actions/create/template.html', controller: 'CreateQuestionController'})
         .when('/questions/edit/:id', {templateUrl: '/app/modules/questions/actions/update/template.html', controller: 'UpdateQuestionController'})
+		.when('/questions/answer/:id', {templateUrl: '/app/modules/questions/actions/answer/template.html', controller: 'AnswerOnQuestionController'})
 		.when('/', {templateUrl: '/app/modules/index/template.html', controller: 'HomeController'})
 		.when('/questions/statistics/:id', {templateUrl: '/app/modules/questions/actions/statistics/template.html', controller: 'StatisticsController'})
 }]);

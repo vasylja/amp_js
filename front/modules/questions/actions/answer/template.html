@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="row wrapper border-bottom white-bg page-heading" style="margin-bottom: 10px;">
+                <div class="col-lg-10">
+                    <h2>
+                       Answer on Question
+                    </h2>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+
+            <form name="answerForm" novalidate>
+                <h3>{{question.text}}</h3>
+
+                <div class="form-group" ng-repeat="choice in question.choices track by $index">
+                    <label><input type="radio" ng-model="formData.choice_id" name="name" value="{{choice.id}}" required> {{choice.text}}</label>
+                     <!--<input type="radio" ng-model="formData.choice_id" name="name" value="{{choice.id}}" required/>-->
+                     <!--<label>{{choice.text}}</label>-->
+                </div>
+
+                <p ng-show="answerForm.name.$invalid && submitted" class="help-block">Choose an Answer!</p>
+                <div class="form-group" style="margin-top:10px">
+                    <input type="submit" class="btn btn-primary " ng-click="answer(answerForm.$valid)" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
