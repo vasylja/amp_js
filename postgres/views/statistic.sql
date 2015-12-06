@@ -1,7 +1,7 @@
 create view v_statis as
 
         select
-            a.id,
+            id,
 
 			q.id as question_id,
 			q.text as question_text,

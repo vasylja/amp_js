@@ -9,7 +9,8 @@ module.exports = {
 	find: find,
 	update: update,
 	remove: remove,
-	query: query
+	query: query,
+	countChoices: countChoices
 
 };
 // { text, choices[] = { text } }
@@ -52,4 +53,7 @@ function query (params) {
 }
 function findAll () {
     return questionsDal.findAll();
+}
+function countChoices(id){
+	return questionsDal.countChoices(id);
 }

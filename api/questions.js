@@ -4,7 +4,8 @@ module.exports = {
     createQuestion: createQuestion,
     getQuestions: getQuestions,
     updateQuestion: updateQuestion,
-    getQuestion: getQuestion
+    getQuestion: getQuestion,
+    getStatistic: getStatistic
 };
 
 //curl -X POST 'http://localhost:3000/questions' -d '{ "text": "Question 105", "choices": [{"text":"one 105"}, {"text": "two 105"}, {"text": "three 105"} ]}' -H "Content-Type: application/json" -v
@@ -38,7 +39,14 @@ function updateQuestion(req, res) {
 
 function getQuestion(req, res) {
     var id = req.params.id;
-    return questionsService.find(id).then(function (question) {
-        res.json(question);
+    return questionsService.find(id).then(function (questions) {
+        res.json(questions);
+    });
+}
+
+function getStatistic(req, res) {
+    var id = req.params.id;
+    return questionsService.countChoices(id).then(function (answers) {
+        res.json(answers);
     });
 }

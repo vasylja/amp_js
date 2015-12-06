@@ -42,9 +42,11 @@ app.delete('/answers/:id', answersAPI.removeAnswer);
 app.get('/answers', answersAPI.queryAnswer);
 
 app.get('/questions/:id', questionsAPI.getQuestion);
+app.get('/questions/:id',questionsAPI.getStatistic);
 app.get('/questions', questionsAPI.getQuestions);
 app.post('/questions', questionsAPI.createQuestion);
 app.put('/questions/:id', questionsAPI.updateQuestion);
+app.get('/questions/:id',questionsAPI.getStatistic);
 
 
 // REST

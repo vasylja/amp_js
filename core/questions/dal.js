@@ -7,7 +7,9 @@ module.exports = {
 	findAll: findAll,
 	find: find,
 	update: update,
-	remove: remove
+	remove: remove,
+	countChoices: countChoices
+
 };
 
 // params = { text: 'Test name' }
@@ -58,7 +60,13 @@ function query (params) {
 	}
 	return builder;
 }
-
+function 	countChoices(id	){
+	return db('v_statis').select('choice_id').count('id').groupBy('choice_id').where({ question_id: id });
+}
 //query({'text': 'text'}).then(function (result) {
 //    console.log(result);
 //});
+
+countChoices(1).then(function (result) {
+	console.log(result);
+});
