@@ -69,6 +69,6 @@ function 	countChoices(id	){
 //    console.log(result);
 //});
 
-countChoices(1).then(function (result) {
-	console.log(result);
-});
+//countChoices(1).then(function (result) {
+//	console.log(result);
+//});
