@@ -18,8 +18,9 @@
             <td>{{ question.id }}</td>
             <td>{{ question.text }}</td>
             <td>
-                <a href="{{editPath}}/{{question.id}}">Edit</a>
-                |<a href="{{answerPath}}/{{question.id}}">Answer</a>|<a href="{{pathStats}}/{{question.id}}">Statistics</a>
+                <a href="{{editPath}}/{{question.id}}"><button type="button">Edit</button></a>
+                <a href="{{answerPath}}/{{question.id}}"><button type="button">Answer</button></a><a href="{{pathStats}}/{{question.id}}">
+                <button type="button">Statistics</button></a>
             </td>
         </tr>
     </table>
