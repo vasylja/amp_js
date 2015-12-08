@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" >
     <div class="row">
         <div class="col-lg-6">
             <div class="row wrapper border-bottom white-bg page-heading" style="margin-bottom: 10px;">
@@ -14,7 +14,7 @@
             <!--<div ng-include="'../../basic_templates/questions_form.html'"></div>-->
             <form name="questionCreation"  novalidate>
                 <div class="form-group" ng-class="{ 'has-error' : questionCreation.questionText.$invalid && submitted }">
-                    Question Text<input type="text" name="questionText" ng-model="question.text" class="form-control" required ng-minlength="3" ng-maxlength="50">
+                    Question Text<input type="text" name="questionText" ng-model="question.text" style="" class="form-control" required ng-minlength="3" ng-maxlength="50">
                     <p ng-show="questionCreation.questionText.$invalid && submitted" class="help-block">Text Length should be in Range 3 and 50</p>
                 </div>
                 <label>Choices</label>

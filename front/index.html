@@ -66,7 +66,7 @@
         -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
         box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
         overflow: hidden;
-        color: lightslategray;
+        /*color: lightslategray;*/
         font-size:120%;
     }
 
@@ -93,7 +93,7 @@
         overflow:hidden;
     }
     input[type=submit] {
-        width: 276px;  height:48px;
+        width: 90px;  height:40px;
     }
 
 
@@ -102,7 +102,7 @@
     }
 
     input.name {
-        background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_name.png) no-repeat scroll 16px 16px;
+        /*background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_name.png) no-repeat scroll 16px 16px;*/
         padding-left:45px;
     }
 
@@ -117,7 +117,7 @@
     }
 
     ::-webkit-input-placeholder {
-        color: #fff;
+        /*color: #fff;*/
     }
 
     :-moz-placeholder{
@@ -138,6 +138,7 @@
         -webkit-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
         box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
         overflow: hidden;
+        color:white;
     }
 
 
@@ -152,7 +153,7 @@
         background: -ms-linear-gradient(top, #77b2b0, #416b68);
         background: -o-linear-gradient(top, #77b2b0, #416b68);
         background-image: -ms-linear-gradient(top, #77b2b0 0%, #416b68 100%);
-        color: #fff;
+        /*color: green;*/
     }
 
     .btn:active {
@@ -166,7 +167,7 @@
         background: -ms-linear-gradient(top, #416b68, #6da5a3);
         background: -o-linear-gradient(top, #416b68, #6da5a3);
         background-image: -ms-linear-gradient(top, #416b68 0%, #6da5a3 100%);
-        color: #fff;
+        /*color: #fff;*/
         -webkit-box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
         -moz-box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
         box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
@@ -176,8 +177,8 @@
 
     body {
         background: url(/../static/background3.jpg);
-        overflow: scroll;
-        color: black;
+        /*overflow: scroll;*/
+        color: white;
         /*position:fixed;*/
 
         top:0;
@@ -195,20 +196,20 @@
 
 
     #navbar{
-        opacity: 0.7;
+        opacity: 0.9;
     }
     #logo{
-        position: fixed;
-        top: 0;
-        right: 0;
-        opacity: 0.6;
-        z-index: 1;
+        /*position: fixed;*/
+        /*top: 0;*/
+        /*right: 0;*/
+        /*opacity: 0.6;*/
+        /*z-index: 1;*/
     }
 </style>
     <nav class="navbar navbar-default" id="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#/">AMP</a>
+                <a  href="#/" style="top:-10px"><img id="logo" src="/../static/logo2.gif" width="70"></a>
             </div>
             <div>
                 <ul class="nav navbar-nav">
@@ -221,7 +222,7 @@
     </nav>
 	<ng-view>
 	</ng-view>
-<img id="logo" src="/../static/logo2.gif" width="250" style="position: absolute;">
+
 </body>
 </html>
 
