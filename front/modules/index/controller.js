@@ -7,5 +7,9 @@ angular.module('app').controller('HomeController', [
                $window.location.href = '/#/questions/answer/' + id;
             }
         };
+
+        $scope.$on('$viewContentLoaded', function() {
+            $('#in').focus();
+        });
     }
 ]);

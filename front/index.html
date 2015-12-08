@@ -27,22 +27,15 @@
     <script type="text/javascript" src="/canvas/canvasjs.min.js"></script>
     <script type="text/javascript" src="/static/diagram.js"></script>
     <script type="text/javascript">
-        function dump(obj) {
-            var out = "";
-            if(obj && typeof(obj) == "object"){
-                for (var i in obj) {
-                    out += i + ": " + obj[i] + "\n";
-                }
-            } else {
-                out = obj;
-            }
-            alert(out);
-        }
+        $(document).ready(function(){
+
+        });
     </script>
     <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css"/>
+
 </head>
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" id="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#/"><img src="/../static/amp.gif" width="120" style="position: absolute; left:550px; top:-10px"></a>
