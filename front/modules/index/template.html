@@ -86,10 +86,10 @@
             <td style="padding-top:30px">
                 <form name="form"  novalidate>
                     <input type="text" name="id" class="input_id" ng-model="id" required id="in">
-                    <p style="font-size:14px;color:antiquewhite" ng-show="form.id.$invalid && submitted" class="help-block">should be not black</p>
                     <button ng-click="go(id, form.$valid)" style="color:white; background-color: rgba(0, 0, 0, 0.5);  height:27px; border:1px solid white">
                         GO
                     </button>
+                    <p style="font-size:14px;color:antiquewhite" ng-show="form.id.$invalid && submitted" class="help-block">should be not black</p>
                 </form>
             </td>
         </tr>
