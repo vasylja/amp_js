@@ -27,35 +27,33 @@ function create (params) {
 	});
 }
 // { id, text, choices[] = { text } }
-function update (params) {
-	return questionsDal.update(params.id, { text: params.text }).then(function () {
-		return choicesDal.removeByQuestionId(params.id).then(function () {
-			var promises = params.choices.map(function (choice) {
-				return choicesDal.create({ text: choice.text, question_id: params.id });
-			});
-			return Promise.all(promises).then(function () {
-				return questionsDal.find(params.id);
-			});
-		});
-	});
-}
-
 //function update (params) {
 //	return questionsDal.update(params.id, { text: params.text }).then(function () {
+//		return choicesDal.removeByQuestionId(params.id).then(function () {
 //			var promises = params.choices.map(function (choice) {
-//                console.log(choicesDal.find(choice.id));
-//
-//                return  choicesDal.update(choice.id,{ text: choice.text, question_id: params.id })
-//                    .catch(function(error) {
-//                        console.log('catch');
-//                        return choicesDal.create({ text: choice.text, question_id: params.id });
-//                });
+//				return choicesDal.create({ text: choice.text, question_id: params.id });
 //			});
 //			return Promise.all(promises).then(function () {
 //				return questionsDal.find(params.id);
 //			});
+//		});
 //	});
 //}
+
+function update (params) {
+	return  questionsDal.update(params.id, { text: params.text })
+		.then(function () {
+			var promises = params.choices.map(function (choice) {
+                return choicesDal.update(choice.id,{ text: choice.text, question_id: params.id })
+					.catch(function(error) {
+						return choicesDal.create({ text: choice.text, question_id: params.id });
+                	});
+			});
+			return Promise.all(promises).then(function () {
+				return questionsDal.find(params.id);
+			});
+	});
+}
 
 function find (id) {
 	return questionsDal.find(id);
