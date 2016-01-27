@@ -44,10 +44,11 @@ function update (params) {
 	return  questionsDal.update(params.id, { text: params.text })
 		.then(function () {
 			var promises = params.choices.map(function (choice) {
-                return choicesDal.update(choice.id,{ text: choice.text, question_id: params.id })
-					.catch(function(error) {
-						return choicesDal.create({ text: choice.text, question_id: params.id });
-                	});
+				if (choice.id != null) {
+					return choicesDal.update(choice.id,{ text: choice.text, question_id: params.id });
+				} else {
+					return choicesDal.create({ text: choice.text, question_id: params.id });
+				}
 			});
 			return Promise.all(promises).then(function () {
 				return questionsDal.find(params.id);
