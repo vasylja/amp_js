@@ -7,6 +7,11 @@ angular.module('app').controller('UpdateQuestionController', [
                 if(item===choice) {
                     arr.splice(i, 1);
                     DeleteChoiceService.delete({qId: item.id});
+
+                    $('#choiceRemovedMessage').fadeIn('slow', function () {
+                        $(this).delay(1200).fadeIn('slow').fadeOut('slow');
+                    });
+
                 }
             });
         };
