@@ -43,7 +43,7 @@ function createUser (req, res) {
 }
 
 function updateUser (req, res) {
-	// update user by id
+	// delete user by id
 	console.log(req.params);
 	console.log(req.query);
 	console.log(req.body);

@@ -33,7 +33,7 @@ function update (id, params) {
             if ( !choice ) {
                 throw new Error('no choice');
             }
-            return db('answers').update(params).where({ id: id });// your query here (insert/update etc)
+            return db('answers').update(params).where({ id: id });// your query here (insert/delete etc)
         });
     });
 }

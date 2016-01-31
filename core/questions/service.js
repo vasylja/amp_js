@@ -27,8 +27,8 @@ function create (params) {
 	});
 }
 // { id, text, choices[] = { text } }
-//function update (params) {
-//	return questionsDal.update(params.id, { text: params.text }).then(function () {
+//function delete (params) {
+//	return questionsDal.delete(params.id, { text: params.text }).then(function () {
 //		return choicesDal.removeByQuestionId(params.id).then(function () {
 //			var promises = params.choices.map(function (choice) {
 //				return choicesDal.create({ text: choice.text, question_id: params.id });

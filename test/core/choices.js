@@ -127,7 +127,7 @@ describe('choices', function() {
                 done();
             }.bind(this));
         });
-        it('should update choice', function (done) {
+        it('should delete choice', function (done) {
             var text = 'new text';
             return Choices.update(this.choice.id, {text: text}).then(function () {
                 return db('choices').where({ id: this.choice.id }).first()

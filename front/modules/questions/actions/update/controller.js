@@ -1,11 +1,12 @@
 angular.module('app').controller('UpdateQuestionController', [
-    '$scope', '$routeParams', '$window','UpdateQuestionService', 'FindQuestionService',
-    function ($scope, $routeParams,$window, UpdateQuestionService, FindQuestionService) {
+    '$scope', '$routeParams', '$window','UpdateQuestionService', 'DeleteChoiceService', 'FindQuestionService',
+    function ($scope, $routeParams,$window, UpdateQuestionService, DeleteChoiceService, FindQuestionService) {
         $scope.question = FindQuestionService.get({qId: $routeParams.id});
         $scope.removeChoice = function(choice) {
             $scope.question.choices.forEach(function(item, i, arr) {
                 if(item===choice) {
                     arr.splice(i, 1);
+                    DeleteChoiceService.delete({qId: item.id});
                 }
             });
         };
