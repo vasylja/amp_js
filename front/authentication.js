@@ -1,0 +1,14 @@
+angular.module('app.authentication').factory('authenticationInterceptor', [
+	function () {
+		return {
+			// for more read about angular http interceptors 
+			request: function (config) {
+				// https://www.npmjs.com/package/store
+				// use it to get token from localStorage
+				//var token = store.get('token');
+				var token = 'lkasjdflkjaf';
+				config.headers.Authorization = 'Bearer ' + token;
+			}
+		};
+	}
+])
