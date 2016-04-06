@@ -20,7 +20,7 @@ module.exports = {
 // email, name
 function create (params) {
 	// get name and email properties from params object
-	var insertParams = _.pick(params, ['name', 'email']);
+	var insertParams = _.pick(params, ['name', 'email', 'password']);
 	// after line above we are sure that we get clean insert object (only email and name fields)
 	return db('users').insert(insertParams).returning('id').then(_.first); // here we return id as string
 }

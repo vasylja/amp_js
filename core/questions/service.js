@@ -13,11 +13,11 @@ module.exports = {
 	countChoices: countChoices
 
 };
-// { text, choices[] = { text } }
+// { text, user_id, choices[] = { text } }
 function create (params) {
 	// 1. create question`
 	// 2. create all choices
-	return questionsDal.create({ text: params.text }).then(function (questionId) {
+	return questionsDal.create({ text: params.text, user_id: params.user_id }).then(function (questionId) {
 		var promises = params.choices.map(function (choice) {
 			return choicesDal.create({ text: choice.text, question_id: questionId });
 		});

@@ -7,6 +7,8 @@ create table users (
 	-- not null constraint on users table
 	email text not null,
 
+	password text,
+
 	-- unique email constraint
 	constraint unique_users_email unique (email)
 

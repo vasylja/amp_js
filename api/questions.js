@@ -16,6 +16,7 @@ function createQuestion(req, res) {
     var params = {
         text: req.body.text,
         choices: req.body.choices,
+		user_id: req.user.id
     };
     return questionsService.create(params).then(function () {
         res.end('Question has been created!');

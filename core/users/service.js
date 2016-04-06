@@ -1,3 +1,4 @@
+var bcrypt = require('bcrypt');
 var usersDAL = require('./dal');
 
 module.exports = {
@@ -13,6 +14,8 @@ module.exports = {
 };
 
 function create (params) {
+	// TODO: replace stub with bcrypt
+	//params.password = hash(params.password);
 	return usersDAL.create(params);
 }
 
@@ -33,6 +36,11 @@ function remove (id) {
 function authenticate (user) {
 	return usersDAL.findByEmail(user.email).then(function (databaseUser) {
 		// todo :replace this with password
-		return databaseUser.name === user.name;
-	})
+		// TODO: replace stub with bcrypt .compare() or smth
+		if ( databaseUser.password === user.password ) {
+			return databaseUser;
+		} else {
+			return null;
+		}
+	});
 }

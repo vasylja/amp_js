@@ -1,11 +1,14 @@
 var usersService = require('../core/users/service');
+var config = require('../config');
+var jwt = require('jwt');
 
 module.exports = {
 	getUsers: getUsers,
 	getUser: getUser,
 	createUser: createUser,
 	updateUser: updateUser,
-	deleteUser: deleteUser
+	deleteUser: deleteUser,
+	authenticate: authenticate
 };
 
 function getUsers (req, res) {
@@ -29,17 +32,14 @@ function getUser (req, res) {
 	});
 }
 
+// Registration
 function createUser (req, res) {
-	// create user and return created entity
-	
-	// req.params ( choices/:id ) = id
-	// req.query ( choices?limit=10&offset=20 ) = { limit: 10, offset: 20 }
-	// req.body ( form, json )
-	console.log(req.params);
-	console.log(req.query);
-	console.log(req.body);
-	res.json({});
-
+	var userToCreate = {
+		name: req.body.name,
+		email: req.body.email,
+		password: req.body.password
+	};
+	return usersService.create(userToCreate);
 }
 
 function updateUser (req, res) {
@@ -52,4 +52,19 @@ function updateUser (req, res) {
 
 function deleteUser () {
 	// delete single user
+}
+
+function authenticate (req, res) {
+	var authParams = {
+		email: req.body.email,
+		password: req.body.password
+	};
+	return usersService.authenticate(authParams).then(function (user) {
+		if ( !user ) {
+			res.status(401).json({ 'error': 'Invalid credentials' });
+			return;
+		}
+		var token = jwt.sign(user, config.jwtSecret);
+		res.status(200).json({ token: token });
+	});
 }

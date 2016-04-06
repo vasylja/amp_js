@@ -7,5 +7,6 @@ module.exports = {
 			password : 'amp',
 			database : 'amp'
 		}
-	}
+	},
+	jwtSecret: 'lksjdlfkasjdlkajsdlkfj'
 };
