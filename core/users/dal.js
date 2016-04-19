@@ -14,7 +14,8 @@ module.exports = {
 	findByEmail: findByEmail,
 	update: update,
 	remove: remove,
-	query: query
+	query: query,
+	getForAuthenticationByEmail: getForAuthenticationByEmail
 };
 
 // email, name
@@ -33,6 +34,9 @@ function find (id) {
 }
 function findByEmail (email) {
 	return db('v_users').where('email', email).first();
+}
+function getForAuthenticationByEmail (email) {
+	return db('users').select('id', 'email', 'password').where('email', email).first();
 }
 function update (id, params) {
 	// same as for insert

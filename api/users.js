@@ -1,6 +1,6 @@
 var usersService = require('../core/users/service');
 var config = require('../config');
-var jwt = require('jwt');
+var jwt = require('jsonwebtoken');
 
 module.exports = {
 	getUsers: getUsers,

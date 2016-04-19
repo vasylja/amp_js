@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var expressJwt = require('express-jwt');
+var config = require('../config');
 
 var usersAPI = require('./users');
 var choicesAPI = require('./choices');
@@ -21,12 +22,17 @@ app.use('/jquery', express.static('node_modules/jquery'));
 app.use('/bootstrap', express.static('node_modules/bootstrap'));
 app.use('/angular-resource', express.static('node_modules/angular-resource'));
 app.use('/angular-route', express.static('node_modules/angular-route'));
+app.use('/store', express.static('node_modules/store'));
 app.use('/canvas', express.static('canvasjs-1.7.0'));
 app.use('/app', express.static('front'));
 app.use('/static', express.static('static'));
 
+app.post('/authenticate', usersAPI.authenticate);
+
 // req.user -> parsed token
-app.use('/', expressJwt({ secret: config.jwtSecret });
+app.use('/', expressJwt({ secret: config.jwtSecret }));
+
+
 
 app.get('/users', usersAPI.getUsers);
 app.get('/users/:id', usersAPI.getUser); 

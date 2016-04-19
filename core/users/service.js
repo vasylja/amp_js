@@ -34,11 +34,11 @@ function remove (id) {
 
 
 function authenticate (user) {
-	return usersDAL.findByEmail(user.email).then(function (databaseUser) {
+	return usersDAL.getForAuthenticationByEmail(user.email).then(function (databaseUser) {
 		// todo :replace this with password
 		// TODO: replace stub with bcrypt .compare() or smth
-		if ( databaseUser.password === user.password ) {
-			return databaseUser;
+		if ( databaseUser && databaseUser.password === user.password ) {
+			return find(databaseUser.id);
 		} else {
 			return null;
 		}

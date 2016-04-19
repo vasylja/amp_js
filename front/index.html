@@ -3,35 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hello, this is my amp_js APP</title>
-	<script src="/angular/angular.js"></script>
-    <script src="/angular-resource/angular-resource.js"></script>
-	<script src="/angular-route/angular-route.js"></script>
-    <script src="/jquery/dist/jquery.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="/app/main.js"></script>
-	<script src="/app/routes.js"></script>
-	<script src="/app/modules/users/list.js"></script>
-	<script src="/app/modules/users/view.js"></script>
-	<script src="/app/modules/questions/actions/list/service.js"></script>
-	<script src="/app/modules/questions/actions/list/controller.js"></script>
-    <script src="/app/modules/questions/actions/create/service.js"></script>
-    <script src="/app/modules/questions/actions/create/controller.js"></script>
-    <script src="/app/modules/questions/actions/find/service.js"></script>
-    <script src="/app/modules/questions/actions/update/service.js"></script>
-    <script src="/app/modules/questions/actions/update/controller.js"></script>
-    <script src="/app/modules/questions/actions/answer/service.js"></script>
-    <script src="/app/modules/questions/actions/answer/controller.js"></script>
-    <script src="/app/modules/questions/actions/statistics/service.js"></script>
-    <script src="/app/modules/questions/actions/statistics/controller.js"></script>
-    <script src="/app/modules/choices/actions/delete/service.js"></script>
-    <script src="/app/modules/index/controller.js"></script>
-    <script type="text/javascript" src="/canvas/canvasjs.min.js"></script>
-    <script type="text/javascript" src="/static/diagram.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-
-        });
-    </script>
     <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css"/>
 
 </head>
@@ -218,15 +189,53 @@
                     <li><a href="#/questions/create">Create Question</a></li>
                     <li><a href="#/questions">Questions List</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" ng-show="!isLoggedIn">
                     <li><a href="#/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                     <li><a href="#/signin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" ng-show="isLoggedIn">
+					<!-- TODO: add logout handler and shit and stuff -->
+                    <li><a href="#/logout"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 	<ng-view>
 	</ng-view>
+
+	<script src="/angular/angular.js"></script>
+	<script type="text/javascript" src="/store/store.js"></script>
+    <script src="/angular-resource/angular-resource.js"></script>
+	<script src="/angular-route/angular-route.js"></script>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/app/authentication.js"></script>
+	<script src="/app/main.js"></script>
+	<script src="/app/routes.js"></script>
+	<script src="/app/modules/users/list.js"></script>
+	<script src="/app/modules/users/view.js"></script>
+	<script src="/app/modules/questions/actions/list/service.js"></script>
+	<script src="/app/modules/questions/actions/list/controller.js"></script>
+    <script src="/app/modules/questions/actions/create/service.js"></script>
+    <script src="/app/modules/questions/actions/create/controller.js"></script>
+    <script src="/app/modules/questions/actions/find/service.js"></script>
+    <script src="/app/modules/questions/actions/update/service.js"></script>
+    <script src="/app/modules/questions/actions/update/controller.js"></script>
+    <script src="/app/modules/questions/actions/answer/service.js"></script>
+    <script src="/app/modules/questions/actions/answer/controller.js"></script>
+    <script src="/app/modules/questions/actions/statistics/service.js"></script>
+    <script src="/app/modules/questions/actions/statistics/controller.js"></script>
+    <script src="/app/modules/choices/actions/delete/service.js"></script>
+    <script src="/app/modules/signin/controller.js"></script>
+    <script src="/app/modules/signup/controller.js"></script>
+    <script src="/app/modules/index/controller.js"></script>
+    <script type="text/javascript" src="/canvas/canvasjs.min.js"></script>
+    <script type="text/javascript" src="/static/diagram.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+        });
+    </script>
 
 </body>
 </html>
