@@ -3,6 +3,7 @@ var db = require('../../db');
 var validator = require('validator');
 
 module.exports = {
+	query: query,
 	create: create,
 	findAll: findAll,
 	find: find,
@@ -57,6 +58,9 @@ function query (params) {
 	}
 	if ( params.text ) {
 		builder.where('text', 'ilike','%'+params.text+'%');
+	}
+	if ( params.user_id ) {
+		builder.where('user_id', params.user_id);
 	}
 	return builder;
 }

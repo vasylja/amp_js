@@ -184,7 +184,7 @@
                 <a  href="#/" style="top:-10px"><img id="logo" src="/../static/logo2.gif" width="70"></a>
             </div>
             <div>
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" ng-show="isLoggedIn">
                     <li class="active"><a href="#/">Home</a></li>
                     <li><a href="#/questions/create">Create Question</a></li>
                     <li><a href="#/questions">Questions List</a></li>
@@ -195,7 +195,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right" ng-show="isLoggedIn">
 					<!-- TODO: add logout handler and shit and stuff -->
-                    <li><a href="#/logout"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+                    <li><a ng-click="logout()" ><span class="glyphicon glyphicon-user"></span> Log out</a></li>
                 </ul>
             </div>
         </div>

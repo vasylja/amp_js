@@ -6,6 +6,7 @@ angular.module('app', [
 }]).run(['$rootScope', function ($rootScope) {
 
 	$rootScope.isLoggedIn = false;
+	$rootScope.logout = logout;
 	$rootScope.$watch(
 		function () {
 			return store.get('token');
@@ -14,6 +15,11 @@ angular.module('app', [
 			$rootScope.isLoggedIn = !!store.get('token');
 		}
 	);
+
+	function logout () {
+		store.remove('token');
+		// TODO: redirect here
+	}
 
 }]);
 

@@ -65,6 +65,6 @@ function authenticate (req, res) {
 			return;
 		}
 		var token = jwt.sign(user, config.jwtSecret);
-		res.status(200).json({ token: token });
+		res.status(200).json({ token: token, user: user });
 	});
 }

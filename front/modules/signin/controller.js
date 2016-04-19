@@ -10,6 +10,11 @@ angular.module('app').controller('SignInController', [
 			$http.post('/authenticate', $scope.item)
 				.then(function (response) {
 					// TODO handle success (add token to localstorage)
+					
+					// LOGOUT -
+					//store.remove('token');
+					// LOGOUT -
+
 					store.set('token', response.data.token);
 					// $location.path(url);
 				})

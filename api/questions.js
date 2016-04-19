@@ -25,7 +25,10 @@ function createQuestion(req, res) {
 
 // curl 'http://localhost:3000/questions' "Content-Type: application/json" -v
 function getQuestions(req, res) {
-    return questionsService.findAll().then(function (questions) {
+	var queryParams = {
+		user_id: req.user.id
+	};
+    return questionsService.query(queryParams).then(function (questions) {
         res.json(questions);
     });
 }
