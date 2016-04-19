@@ -1,5 +1,7 @@
 angular.module('app').config(['$routeProvider', function ($routeProvider) {
 	$routeProvider
+		.when('/signin', {templateUrl: '/app/modules/signin/template.html', controller: 'SignInController'})
+		.when('/signup', {templateUrl: '/app/modules/signup/template.html', controller: 'SignUpController'})
 		.when('/users', { templateUrl: '/app/modules/users/list.html', controller: 'UsersListController' })
 		.when('/users', { templateUrl: '/app/modules/users/view.html', controller: 'UsersViewController' })
 		.when('/questions', {templateUrl: '/app/modules/questions/actions/list/template.html', controller: 'QuestionsListController'})

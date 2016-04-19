@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var expressJwt = require('express-jwt');
 
 var usersAPI = require('./users');
 var choicesAPI = require('./choices');
@@ -23,6 +24,9 @@ app.use('/angular-route', express.static('node_modules/angular-route'));
 app.use('/canvas', express.static('canvasjs-1.7.0'));
 app.use('/app', express.static('front'));
 app.use('/static', express.static('static'));
+
+// req.user -> parsed token
+app.use('/', expressJwt({ secret: config.jwtSecret });
 
 app.get('/users', usersAPI.getUsers);
 app.get('/users/:id', usersAPI.getUser); 

@@ -111,7 +111,7 @@ describe('questions', function() {
 				done();
 			}.bind(this));
 		});
-		it('should update questions', function (done) {
+		it('should delete questions', function (done) {
 			var text = 'new text';
 			return Questions.update(this.questions.id, {text: text}).then(function () {
 				return db('questions').where({ id: this.questions.id }).first()

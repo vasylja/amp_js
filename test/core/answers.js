@@ -80,7 +80,7 @@ describe('answers', function() {
                 done();
             }.bind(this));
         });
-        it('should update answer', function (done) {
+        it('should delete answer', function (done) {
             return Answers.update(this.answer.id, {question_id: '46', choice_id: '2'}).then(function () {
                 return db('answers').where({ id: this.answer.id }).first()
                     .then(function (answer) {
