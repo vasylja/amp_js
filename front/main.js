@@ -3,7 +3,7 @@ angular.module('app', [
 ]).config(['$httpProvider', function ($httpProvider) {
 	// interceptors  README - https://docs.angularjs.org/api/ng/service/$http
 	$httpProvider.interceptors.push('authenticationInterceptor');
-}]).run(['$rootScope', function ($rootScope) {
+}]).run(['$rootScope', '$window', function ($rootScope, $window) {
 
 	$rootScope.isLoggedIn = false;
 	$rootScope.logout = logout;
@@ -18,7 +18,7 @@ angular.module('app', [
 
 	function logout () {
 		store.remove('token');
-		// TODO: redirect here
+		$window.location.href = '/#/';
 	}
 
 }]);

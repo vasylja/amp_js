@@ -28,6 +28,7 @@ app.use('/app', express.static('front'));
 app.use('/static', express.static('static'));
 
 app.post('/authenticate', usersAPI.authenticate);
+app.post('/users', usersAPI.createUser);
 
 // req.user -> parsed token
 app.use('/', expressJwt({ secret: config.jwtSecret }));
@@ -36,7 +37,7 @@ app.use('/', expressJwt({ secret: config.jwtSecret }));
 
 app.get('/users', usersAPI.getUsers);
 app.get('/users/:id', usersAPI.getUser); 
-app.post('/users', usersAPI.createUser);
+
 app.put('/users/:id', usersAPI.updateUser);
 app.delete('/users/:id', usersAPI.deleteUser);
 
@@ -67,5 +68,5 @@ app.get('/questions/:id',questionsAPI.getStatistic);
 
 
 
-app.listen(3000);
-console.log('App is running on port 3000');
+app.listen(3030);
+console.log('App is running on port 3030');
