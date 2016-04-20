@@ -181,11 +181,17 @@
     <nav class="navbar navbar-default" id="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a  href="#/" style="top:-10px"><img id="logo" src="/../static/logo2.gif" width="70"></a>
+                <a  ng-show="!isLoggedIn" href="#/" style="top:-10px">
+                    <h4>AMP</h4>
+                </a>
+                <a  ng-show="isLoggedIn" href="#/questions" style="top:-10px">
+                    <h4>AMP</h4>
+                </a>
             </div>
             <div>
                 <ul class="nav navbar-nav" ng-show="isLoggedIn">
-                    <li class="active"><a href="#/">Home</a></li>
+                    <li class="active"><a href="#/" ng-show="!isLoggedIn">Home</a></li>
+                    <li class="active"><a href="#/questions" ng-show="isLoggedIn">Home</a></li>
                     <li><a href="#/questions/create">Create Question</a></li>
                     <li><a href="#/questions">Questions List</a></li>
                 </ul>

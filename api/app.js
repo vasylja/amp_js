@@ -29,6 +29,8 @@ app.use('/static', express.static('static'));
 
 app.post('/authenticate', usersAPI.authenticate);
 app.post('/users', usersAPI.createUser);
+app.get('/questions/:id', questionsAPI.getQuestion);
+app.post('/answers', answersAPI.createAnswer);
 
 // req.user -> parsed token
 app.use('/', expressJwt({ secret: config.jwtSecret }));
@@ -49,12 +51,12 @@ app.get('/choices', choicesAPI.queryChoices);
 app.delete('/choices', choicesAPI.removeByQuestionId);
 
 app.get('/answers/:id', answersAPI.getAnswer);
-app.post('/answers', answersAPI.createAnswer);
+
 app.put('/answers/:id', answersAPI.updateAnswer);
 app.delete('/answers/:id', answersAPI.removeAnswer);
 app.get('/answers', answersAPI.queryAnswer);
 
-app.get('/questions/:id', questionsAPI.getQuestion);
+
 app.get('/questions/statistics/:id',questionsAPI.getStatistic);
 app.get('/questions', questionsAPI.getQuestions);
 app.post('/questions', questionsAPI.createQuestion);

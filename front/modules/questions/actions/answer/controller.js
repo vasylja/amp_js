@@ -1,6 +1,6 @@
 angular.module('app').controller('AnswerOnQuestionController', [
-    '$scope', '$routeParams', '$window','AnswerOnQuestionService', 'FindQuestionService',
-    function ($scope, $routeParams,$window, AnswerOnQuestionService, FindQuestionService) {
+    '$scope', '$routeParams', '$window', '$rootScope','AnswerOnQuestionService', 'FindQuestionService',
+    function ($scope, $routeParams,$window, $rootScope, AnswerOnQuestionService, FindQuestionService) {
         $scope.question = FindQuestionService.get({qId: $routeParams.id});
         $scope.formData = {
             question_id: $routeParams.id,
@@ -9,7 +9,12 @@ angular.module('app').controller('AnswerOnQuestionController', [
             $scope.submitted = true;
             if(isValid) {
                 AnswerOnQuestionService.save($scope.formData);
-                $window.location.href = '/#/questions';
+                if($rootScope.isLoggedIn) {
+                    $window.location.href = '/#/questions';
+                } else {
+                    $window.location.href = '/#/';
+                }
+
             }
 
         }
