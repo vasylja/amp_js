@@ -9,6 +9,7 @@ module.exports = {
 	find: find,
 	update: update,
 	remove: remove,
+	removeByTestId:removeByTestId,
 	countChoices: countChoices
 
 };
@@ -59,8 +60,8 @@ function query (params) {
 	if ( params.text ) {
 		builder.where('text', 'ilike','%'+params.text+'%');
 	}
-	if ( params.user_id ) {
-		builder.where('user_id', params.user_id);
+	if ( params.test_id ) {
+		builder.where('test_id', params.test_id);
 	}
 	return builder;
 }
@@ -76,3 +77,7 @@ function 	countChoices(id	){
 //countChoices(1).then(function (result) {
 //	console.log(result);
 //});
+
+function removeByTestId (testId) {
+	return db('questions').del().where({ test_id: testId });
+}

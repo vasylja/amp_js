@@ -16,7 +16,7 @@ function createQuestion(req, res) {
     var params = {
         text: req.body.text,
         choices: req.body.choices,
-		user_id: req.user.id
+		test_id: req.test.id
     };
     return questionsService.create(params).then(function () {
         res.end('Question has been created!');
@@ -26,7 +26,7 @@ function createQuestion(req, res) {
 // curl 'http://localhost:3000/questions' "Content-Type: application/json" -v
 function getQuestions(req, res) {
 	var queryParams = {
-		user_id: req.user.id
+		test_id: req.test.id
 	};
     return questionsService.query(queryParams).then(function (questions) {
         res.json(questions);

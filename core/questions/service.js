@@ -10,14 +10,16 @@ module.exports = {
 	update: update,
 	remove: remove,
 	query: query,
+	removeByTestId: removeByTestId,
 	countChoices: countChoices
 
+
 };
-// { text, user_id, choices[] = { text } }
+// { text, test_id, choices[] = { text } }
 function create (params) {
 	// 1. create question`
 	// 2. create all choices
-	return questionsDal.create({ text: params.text, user_id: params.user_id }).then(function (questionId) {
+	return questionsDal.create({ text: params.text, test_id: params.test_id }).then(function (questionId) {
 		var promises = params.choices.map(function (choice) {
 			return choicesDal.create({ text: choice.text, question_id: questionId });
 		});
@@ -70,6 +72,12 @@ function query (params) {
 function findAll () {
     return questionsDal.findAll();
 }
+
 function countChoices(id){
 	return questionsDal.countChoices(id);
 }
+
+function removeByTestId (testId) {
+	return questionsDal.removeByTestId(testId);
+}
+

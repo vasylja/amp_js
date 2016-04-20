@@ -8,6 +8,8 @@ var usersAPI = require('./users');
 var choicesAPI = require('./choices');
 var answersAPI = require('./answers');
 var questionsAPI = require('./questions');
+var testsAPI =require('./tests');
+
 
 var path = require('path');
 
@@ -32,6 +34,7 @@ app.post('/users', usersAPI.createUser);
 app.get('/questions/:id', questionsAPI.getQuestion);
 app.post('/answers', answersAPI.createAnswer);
 
+app.get('/tests/:id', testsAPI.getTest);
 // req.user -> parsed token
 app.use('/', expressJwt({ secret: config.jwtSecret }));
 
@@ -62,6 +65,11 @@ app.get('/questions', questionsAPI.getQuestions);
 app.post('/questions', questionsAPI.createQuestion);
 app.put('/questions/:id', questionsAPI.updateQuestion);
 app.get('/questions/:id',questionsAPI.getStatistic);
+
+
+app.get('/tests', testsAPI.getTests);
+app.post('/tests', testsAPI.createTest);
+app.put('/tests/:id', testsAPI.updateTest());
 
 
 // REST
