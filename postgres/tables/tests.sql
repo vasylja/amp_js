@@ -1,6 +1,6 @@
 create table tests (
 	id bigserial primary key,
-	text name,
+	name text,
 	user_id bigint references users
 );
 

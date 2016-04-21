@@ -2,7 +2,6 @@ create view v_questions as
 select
 	q.id,
 	q.text,
-	q.user_id,
 	(select json_agg(row) from (
 		select
 			c.id,

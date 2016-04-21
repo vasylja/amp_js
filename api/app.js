@@ -69,7 +69,7 @@ app.get('/questions/:id',questionsAPI.getStatistic);
 
 app.get('/tests', testsAPI.getTests);
 app.post('/tests', testsAPI.createTest);
-app.put('/tests/:id', testsAPI.updateTest());
+app.put('/tests/:id', testsAPI.updateTest);
 
 
 // REST
