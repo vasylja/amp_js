@@ -18,9 +18,10 @@ function create (params) {
     // 1. create test
     // 2. create all questions`
     // 3. create all choices for the appropriate question
-    return questionsDal.create({ name: params.name, user_id: params.user_id }).then(function (testId) {
+    
+    return testsDal.create({ name: params.name, user_id: params.user_id }).then(function (testId) {
         var questionsPromises = params.questions.map(function (question) {
-            return questionDal.create({ text: question.text, test_id: testId }).then(function(questionId){
+            return questionsDal.create({ text: question.text, test_id: testId }).then(function(questionId){
                 var choicesPromises = question.choices.map(function (choice) {
                     return choicesDal.create({ text: choice.text, question_id: questionId })
                 });

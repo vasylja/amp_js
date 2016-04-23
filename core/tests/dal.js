@@ -15,7 +15,7 @@ module.exports = {
 
 // params = { text: 'Test name' }
 function create (params) {
-    if ( !validator.isLength(params.text, 2, 1000) ) {
+    if ( !validator.isLength(params.name, 2, 1000) ) {
         throw new Error('Text should be in range 2, 1000');
     }
     return db('tests').insert(params).returning('id').then(function (array) {

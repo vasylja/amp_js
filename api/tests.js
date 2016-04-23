@@ -17,8 +17,8 @@ function createTest(req, res) {
     var params = {
         name: req.body.name,
         questions: req.body.questions,
-        choices: req.body.choices,
-        test_id: req.test.id
+        // choices: req.body.choices,
+        user_id: req.user.id
     };
     return testsService.create(params).then(function () {
         res.end('Test has been created!');
