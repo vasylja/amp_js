@@ -1,0 +1,40 @@
+.fon{
+    border-radius: 3px;
+    margin: 0;
+    background: rgba(0,0,0,0.3);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0));
+    //box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    height: 400px;
+    color: white;
+}
+
+.logo{
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+}
+
+.logout{
+    cursor: pointer;
+}
+
+.fon-menu{
+    color: white;
+    background: rgba(0,0,0,0.6);
+    border-radius: 3px;
+    margin: 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.menu{
+    text-align: center;
+    color: white;
+}
+
+.menu:hover{
+    text-align: center;
+    background: rgba(0,0,0,0.9);
+    color: #ffffff;
+}
