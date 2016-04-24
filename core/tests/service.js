@@ -81,5 +81,5 @@ function remove (id) {
     return testsDal.remove(id);
 }
 function query (params) {
-    return questionsDal.query(params);
+    return testsDal.query(params);
 }

@@ -17,7 +17,7 @@ angular.module('app').controller('SignInController', [
 
 					store.set('token', response.data.token);
 					// $location.path(url);
-					$window.location.href = '/#/questions';
+					$window.location.href = '/#/tests';
 				})
 				.catch(function (error) {
 					// TODO handle error

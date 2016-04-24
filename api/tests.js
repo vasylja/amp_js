@@ -45,7 +45,11 @@ function updateTest(req, res) {
 
 function getTest(req, res) {
     var id = req.params.id;
-    return testsService.find(id).then(function (tests) {
-        res.json(tests);
+    // return testsService.find(id).then(function (tests) {
+    //     res.json(tests);
+    // });
+    var params =  {id: id};
+    return testsService.query(params).then(function (tests) {
+        res.json(tests[0]);
     });
 }

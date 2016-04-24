@@ -13,6 +13,9 @@ begin
 end;
 $body$;
 
+
+\i ./views/tests.sql
+
 \i ./views/questions.sql
 
 -- Meta command \i in psql. Executes file. It takes argument – path to the file

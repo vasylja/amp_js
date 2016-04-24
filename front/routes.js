@@ -9,9 +9,10 @@ angular.module('app').config(['$routeProvider', function ($routeProvider) {
         .when('/questions/edit/:id', {templateUrl: '/app/modules/questions/actions/update/template.html', controller: 'UpdateQuestionController'})
 		.when('/questions/answer/:id', {templateUrl: '/app/modules/questions/actions/answer/template.html', controller: 'AnswerOnQuestionController'})
 		.when('/', {templateUrl: '/app/modules/index/template.html', controller: 'HomeController'})
-		.when('/questions/statistics/:id', {templateUrl: '/app/modules/questions/actions/statistics/template.html', controller: 'StatisticsController'})
+		// .when('/questions/statistics/:id', {templateUrl: '/app/modules/questions/actions/statistics/template.html', controller: 'StatisticsController'})
 
-		// .when('/tests', {templateUrl: '/app/modules/tests/actions/list/template.html', controller: 'TestsListController'})
+		.when('/tests', {templateUrl: '/app/modules/tests/actions/list/template.html', controller: 'TestsListController'})
 		.when('/tests/create', {templateUrl: '/app/modules/tests/actions/create/template.html', controller: 'CreateTestController'})
+		.when('/tests/statistics/:id', {templateUrl: '/app/modules/tests/actions/statistics/template.html', controller: 'StatisticsController'})
 	
 }]);

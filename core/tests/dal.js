@@ -30,15 +30,12 @@ function findAll () {
 }
 
 function find (id) {
-    //return db('questions').where('id', id); // [ { id: 1} ]
-    //return db('questions').where('id', id).first(); // { id: 1 }
+
+    // var builder = db('tests');
+    // builder.where('id', id);
+    // return builder;
     return db('tests').where({ id: id }).first();
-    //return db('questions').where({ id: id }).first().then(function (question) {
-    //	return db('choices').where({ question_id: question.id }).then(function (choices) {
-    //		question.choices = choices;
-    //		return question;
-    //	})
-    //});
+
 }
 
 function update (id, test) {
@@ -51,7 +48,7 @@ function remove (id) {
 
 // params = { id: 1 }`
 function query (params) {
-    var builder = db('questions');
+    var builder = db('v_tests');
     builder.select('*');
     if ( params.id ) {
         builder.where('id', params.id);
