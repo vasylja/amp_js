@@ -16,7 +16,6 @@ angular.module('app').controller('UpdateTestController', [
         $scope.removeQuestion = function(question) {
             $scope.test.questions.forEach(function(item, i, arr) {
                 if(item===question) {
-
                     arr.splice(i, 1);
                     if(item.choices!=null) {
                         item.choices.forEach(function (ch, j, array) {

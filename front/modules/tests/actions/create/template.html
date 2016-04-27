@@ -1,10 +1,10 @@
-<div class="container" >
+<div class="container" style="margin-left:20px">
     <div class="row">
         <div class="col-lg-6">
             <div class="row wrapper border-bottom white-bg page-heading" style="margin-bottom: 10px;">
                 <div class="col-lg-10">
                     <h2>
-                        Test Update
+                        Create Test
                     </h2>
                 </div>
                 <div class="col-lg-2">
@@ -16,16 +16,20 @@
                 <div class="form-group" ng-class="{ 'has-error' : testCreation.questionText.$invalid && submitted }">
                     Test Name<input type="text" name="testName" ng-model="test.name" style="width: 70%" class="form-control" required ng-minlength="3" ng-maxlength="50">
                     <p ng-show="testCreation.testName.$invalid && submitted" class="help-block" style="color: #FF9CA7">Name Length should be in Range 3 and 50</p>
+
                 </div>
 
                 <label>Questions</label>
                 <div class="form-group" ng-repeat="question in test.questions track by $index">
                     <div ng-class="{ 'has-error' : testCreation.question_text{{$index}}.$invalid && submitted }">
-                        Question Text <input type="text" class="form-control" style="display:table-row" name="question_text{{$index}}" ng-model="question.text" required>
+
+                        Question Text <input type="text" class="form-control" style=";" name="question_text{{$index}}" ng-model="question.text" required>
                         <p ng-show="testCreation.question_text{{$index}}.$invalid && submitted" class="help-block" style="color: #FF9CA7">Text should not be blank.</p>
                         <a href="" class="remove-choice" ng-click="removeQuestion(question)">
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
+
+
                     </div>
                 <div style="margin-left: 50px">
                     <label>Choices</label>
@@ -50,7 +54,7 @@
                 </button>
 
                 <div class="form-group" style="margin-top:10px">
-                    <input type="submit" class="btn btn-primary " ng-click="save(test, testCreation.$valid)" value="Save" />
+                    <input type="submit" class="button" ng-click="save(test, testCreation.$valid)" value="Save" />
                 </div>
             </form>
         </div>
