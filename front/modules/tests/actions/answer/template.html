@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="row wrapper border-bottom white-bg page-heading" style="margin-bottom: 10px;">
+                <div class="col-lg-10">
+                    <h2>
+                       Answer on  {{test.name}}
+                    </h2>
+                </div>
+            </div>
+
+            <form name="answerForm" novalidate>
+                <div ng-repeat="question in test.questions">
+                    <h3>{{question.text}}</h3>
+                    <div class="form-group" ng-repeat="choice in question.choices">
+                        <label><input type="radio" ng-model="formData[$parent.$index ].choice_id" name="name{{ $parent.$index }}" value="{{choice.id}}" required> {{choice.text}}</label>
+                        <div ng-init="formData[$parent.$index ].question_id = question.id"></div>
+
+                    </div>
+                    <p ng-show="answerForm.name{{ $parent.$index }}.$invalid && submitted" class="help-block">Choose an Answer!</p>
+                </div>
+                <div class="form-group" style="margin-top:10px">
+                    <input type="submit" class="btn btn-primary " ng-click="answer(answerForm.$valid)" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

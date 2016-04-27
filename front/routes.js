@@ -15,5 +15,6 @@ angular.module('app').config(['$routeProvider', function ($routeProvider) {
 		.when('/tests/create', {templateUrl: '/app/modules/tests/actions/create/template.html', controller: 'CreateTestController'})
 		.when('/tests/statistics/:id', {templateUrl: '/app/modules/tests/actions/statistics/template.html', controller: 'StatisticsController'})
 		.when('/tests/update/:id', {templateUrl: '/app/modules/tests/actions/update/template.html', controller: 'UpdateTestController'})
+		.when('/tests/answer/:id', {templateUrl: '/app/modules/tests/actions/answer/template.html', controller: 'AnswerOnTestController'})
 	
 }]);
