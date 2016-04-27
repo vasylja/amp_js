@@ -9,14 +9,17 @@ body {
 /*}*/
 
 input[type=email]{
+    opacity:0.8;
     background: lightgrey;
 }
 
 input[type=text]{
+    opacity:0.8;
     background: lightgrey;
 }
 
 input[type=password]{
+    opacity:0.8;
     background: lightgrey;
 }
 
