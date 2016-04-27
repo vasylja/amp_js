@@ -42,7 +42,7 @@ angular.module('app').controller('StatisticsController', [
             console.log(data)
             var element = document.getElementsByClassName("container");
             $(element).append(
-                "<div id='chartContainer"  + i + "' style='height: 200px; width: 70%; margin-top:50px; '></div>"
+                "<div id='chartContainer"  + i + "' style='height: 200px; width: 80%; margin-top:50px; margin-left:20px '></div>"
             );
 
             var chart = new CanvasJS.Chart("chartContainer" + i, {
