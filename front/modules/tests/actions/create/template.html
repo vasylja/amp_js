@@ -4,7 +4,7 @@
             <div class="row wrapper border-bottom white-bg page-heading" style="margin-bottom: 10px;">
                 <div class="col-lg-10">
                     <h2>
-                        Test Update
+                        Create Test
                     </h2>
                 </div>
                 <div class="col-lg-2">
@@ -23,15 +23,12 @@
                 <div class="form-group" ng-repeat="question in test.questions track by $index">
                     <div ng-class="{ 'has-error' : testCreation.question_text{{$index}}.$invalid && submitted }">
 
-                        Question Text <input type="text" class="form-control" style="display:table-row" name="question_text{{$index}}" ng-model="question.text" required>
+                        Question Text <input type="text" class="form-control" style=";" name="question_text{{$index}}" ng-model="question.text" required>
                         <p ng-show="testCreation.question_text{{$index}}.$invalid && submitted" class="help-block" style="color: #FF9CA7">Text should not be blank.</p>
                         <a href="" class="remove-choice" ng-click="removeQuestion(question)">
-
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
 
-                        <input type="text" class="form-control" style="display:table-row" name="question_text{{$index}}" ng-model="question.text" required>
-                        <p ng-show="testCreation.question_text{{$index}}.$invalid && submitted" class="help-block">Text should not be blank.</p>
 
                     </div>
                 <div style="margin-left: 50px">

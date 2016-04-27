@@ -1,7 +1,11 @@
-<div class="container" style="margin-left:20px">
-    <div><h3>My tests list</h3></div>
-    <table class="table custab">
-        <thead>
+<div class="container">
+    <div class="row">
+        <h3 align="center" style="margin-right: 100px;">List Tests</h3>
+    </div>
+
+    <div class="row">
+    <table class="table table-size" style="margin-left:5%;margin-right:5%;">
+        <thead style="background: rgba(0,0,0,0.6)">
         <tr>
             <td>
                 Id
@@ -14,15 +18,23 @@
             </td>
         </tr>
         </thead>
-        <tr ng-repeat="test in tests">
-            <td>{{ test.id }}</td>
-            <td>{{ test.name }}</td>
+        <div class="row" >
+        <tr ng-repeat="test in tests" style="background: rgba(0,0,0,0.3)">
+            <div class="col-lg-4">
+                <td>{{ test.id }}</td>
+            </div>
+            <div class="col-lg-4">
+                <td>{{ test.name }}</td>
+            </div>
+            <div class="col-lg-4">
             <td>
-                <a href="{{editPath}}/{{test.id}}"><button type="button">Edit</button></a>
-                <a href="{{answerPath}}/{{test.id}}"><button type="button">Answer</button></a>
-                <a href="{{pathStats}}/{{test.id}}">
-                <button type="button">Statistics</button></a>
+                <a href="{{editPath}}/{{test.id}}"><button class="button" type="button">Edit</button></a>
+                <a href="{{answerPath}}/{{test.id}}"><button class="button" type="button">Answer</button></a>
+                <a href="{{pathStats}}/{{test.id}}"><button class="button" type="button">Statistics</button></a>
             </td>
+            </div>
         </tr>
+        </div>
     </table>
+    </div>
 </div>

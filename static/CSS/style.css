@@ -4,6 +4,18 @@ body {
     background-attachment: fixed;
 }
 
+input[type=text]{
+    background: lightgrey;
+}
+
+input[type=email]{
+    background: lightgrey;
+}
+
+input[type=password]{
+    background: lightgrey;
+}
+
 .logo {
     margin-left: 20px;
     margin-right: 20px;
@@ -34,6 +46,11 @@ a:hover{
     color: rgba(0,0,0,0.9);
 }
 
+.table-size{
+    width: 80%;
+    margin-bottom: 50px;
+}
+
 .button{
     background: rgba(0,0,0,0.7);
     padding-left: 10px;
@@ -46,6 +63,7 @@ a:hover{
 }
 
 .button:hover{
+    color: #ffffff;
     background: rgba(0,0,0,0.9);
     padding-left: 10px;
     padding-right: 10px;
