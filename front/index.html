@@ -4,27 +4,31 @@
 	<meta charset="UTF-8">
 	<title>Hello, this is my amp_js APP</title>
     <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css"/>
-    <link src="" />
+    <link href="/../static/CSS/style.css" rel="stylesheet"/>
 
 </head>
 <body class="">
 
-    <nav class="navbar navbar-default" id="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a  ng-show="!isLoggedIn" href="#/" style="top:-10px">
-                    <h4>AMP</h4>
-                </a>
-                <a  ng-show="isLoggedIn" href="#/tests" style="top:-10px">
-                    <h4>AMP</h4>
-                </a>
-            </div>
+<div class="container">
+    <div class="row menu">
+
+        <div class="container-fluid navbar-inverse">
+            <a ng-show="!isLoggedIn" href="#/" style="text-decoration: none">
+                <div class="navbar-header">
+                    <h4 class="logo">AMP</h4>
+                </div>
+            </a>
+            <a ng-show="isLoggedIn" href="#/tests" style="text-decoration: none;">
+                <div class="navbar-header">
+                    <h4 class="logo">AMP</h4>
+                </div>
+            </a>
             <div>
                 <ul class="nav navbar-nav" ng-show="isLoggedIn">
-                    <li class="active"><a href="#/" ng-show="!isLoggedIn">Home</a></li>
-                    <li class="active"><a href="#/tests" ng-show="isLoggedIn">Home</a></li>
-                    <li><a href="#/tests/create">Add Test</a></li>
-                    <li><a href="#/tests">My Tests</a></li>
+                    <li><a class="home" href="#/" ng-show="!isLoggedIn">Home</a></li>
+                    <li><a class="navbar-header home" href="#/tests" ng-show="isLoggedIn">Home</a></li>
+                    <li><a href="#/tests/create">Create Test</a></li>
+                    <li><a href="#/tests">List Tests</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" ng-show="!isLoggedIn">
                     <li><a href="#/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -32,13 +36,16 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right" ng-show="isLoggedIn">
 					<!-- TODO: add logout handler and shit and stuff -->
-                    <li><a ng-click="logout()" ><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+                    <li><a class="a" ng-click="logout()" ><span class="glyphicon glyphicon-user"></span> Log out</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
-	<ng-view>
-	</ng-view>
+
+    </div>
+    <div class="row info">
+	    <ng-view>
+	    </ng-view>
+    </div>
 
 	<script src="/angular/angular.js"></script>
 	<script type="text/javascript" src="/store/store.js"></script>
@@ -82,7 +89,7 @@
 
         });
     </script>
-
+</div>
 </body>
 </html>
 

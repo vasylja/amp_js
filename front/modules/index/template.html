@@ -1,77 +1,6 @@
-<style>
-        html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-        a, abbr, acronym, address, big, cite, code,
-        del, dfn, em, img, ins, kbd, q, s, samp,
-        small, strike, strong, sub, sup, tt, var,
-        b, u, i, center,
-        dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend,
-        table, caption, tbody, tfoot, thead, tr, th, td,
-        article, aside, canvas, details, embed,
-        figure, figcaption, footer, header, hgroup,
-        menu, nav, output, ruby, section, summary,
-        time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-        }
-        /* HTML5 display-role reset for older browsers */
-        article, aside, details, figcaption, figure,
-        footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-        body {
-            line-height: 1;
-        }
-        ol, ul {
-            list-style: none;
-        }
-        blockquote, q {
-            quotes: none;
-        }
-        blockquote:before, blockquote:after,
-        q:before, q:after {
-            content: '';
-            content: none;
-        }
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        body {
-            /*background-image: url(static/Question.jpg);*/
-            /*background-size: cover;*/
-            font-size:20px;
-        }
-        .navbar{
-            visibility: hidden;
-        }
-        .index_square{
-            width:300px;
-            height:300px;
-            margin:auto;
-            padding:auto;
-            margin-top:95px;
-            /*border:3px solid white;*/
-            color:white;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        .input_id{
-            width:150px;
-            height:27px;
-            text-align:center;
-            font-size:18px;
-            border:1px solid white;
-            color:white;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-</style>
-<div class="index_square">
-    <table style="margin:auto; text-align:center">
+
+<div>
+    <table style="margin:auto; margin-bottom: 40px; text-align:center">
         <tr>
             <td style="font-size:26px; padding-top:70px; ">
                 welcome to
@@ -85,38 +14,22 @@
         <tr>
             <td style="padding-top:30px">
                 <form name="form"  novalidate>
-                    <input type="text" name="id" class="input_id" ng-model="id" required id="in">
-                    <button ng-click="go(id, form.$valid)" style="color:white; background-color: rgba(0, 0, 0, 0.5);  height:27px; border:1px solid white">
+                    <input type="text" name="id" style="height: 33px" ng-model="id" required id="in">
+                    <button ng-click="go(id, form.$valid)" class="btn btn-primary">
                         GO
                     </button>
-                    <p style="font-size:14px;color:antiquewhite" ng-show="form.id.$invalid && submitted" class="help-block">should be not black</p>
+                    <p style="font-size:14px;color:black" ng-show="form.id.$invalid && submitted">should be not black</p>
                 </form>
             </td>
         </tr>
         <tr>
-            <td style="font-size:16px; padding-top:5px">
-                or <a href="/#/signin" style="font-size:18px; color:white">sign in</a>
+            <td>
+                or <a href="/#/signin" style="color:#080808">sign in</a>
             </td>
         </tr>
     </table>
 </div>
 
-<!--<div class="container">-->
-
-    <!--<form name="form"  novalidate>-->
-        <!--<h2>Enter id and go to ANSWER PAGE</h2>-->
-        <!--<div class="form-group" ng-class="{ 'has-error' : form.id.$invalid && submitted }">-->
-            <!--Id<input type="text" name="id" class="form-control" ng-model="id" required>-->
-            <!--<p ng-show="form.id.$invalid && submitted" class="help-block">Id Should be not black</p>-->
-        <!--</div>-->
-        <!--<div class="form-group" style="margin-top:10px">-->
-            <!--<input type="submit" class="btn btn-primary " ng-click="go(id, form.$valid)" value="Save" />-->
-        <!--</div>-->
-    <!--</form>-->
-
-
-
-<!--</div>-->
 
 
 

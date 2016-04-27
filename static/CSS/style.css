@@ -1,3 +1,56 @@
-.body {
+body {
     background-image: url('../background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.logo {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    margin-top: 16px;
+}
+
+.menu {
+    margin-right: 30px;
+    margin-left: 30px;
+    color: white;
+    margin-top: 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+.a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a{
+    color: #ffffff;
+}
+
+a:hover{
+    text-decoration: none;
+    color: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.5); !important;
+}
+
+.home {
+    background: rgba(0,0,0,0.5);
+}
+.home:hover{
+    background: rgba(0,0,0,0.5);
+}
+
+.go {
+    background: rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.info {
+    margin-right: 30px;
+    margin-left: 30px;
+    color: white;
+    margin-top: 40px;
+    background: rgba(0,0,0,0.5);
 }

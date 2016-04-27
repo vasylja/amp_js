@@ -14,7 +14,7 @@
             <!--<div ng-include="'../../basic_templates/questions_form.html'"></div>-->
             <form name="testCreation"  novalidate>
                 <div class="form-group" ng-class="{ 'has-error' : testCreation.questionText.$invalid && submitted }">
-                    Test Name<input type="text" name="testName" ng-model="test.name" style="" class="form-control" required ng-minlength="3" ng-maxlength="50">
+                    Test Name<input type="text" name="testName" ng-model="test.name" style="width: 70%" class="form-control" required ng-minlength="3" ng-maxlength="50">
                     <p ng-show="testCreation.testName.$invalid && submitted" class="help-block">Name Length should be in Range 3 and 50</p>
                 </div>
 
