@@ -1,11 +1,11 @@
 angular.module('app').controller('UpdateTestController', [
     '$scope', '$routeParams','$window' , 'UpdateTestService','DeleteChoicesByQuestionIdService',
-    'DeleteChoiceService','DeleteQuestionService', 'FindQuestionService',
+    'DeleteChoiceService','DeleteQuestionService', 'FindTestService',
     function ($scope, $routeParams, $window, UpdateTestService,DeleteChoicesByQuestionIdService,
     DeleteChoiceService,DeleteQuestionService,FindTestService) {
 
-        $scope.test = FindTestService.get({qId: $routeParams.id});
-
+        $scope.test = FindTestService.get({tId: $routeParams.id});
+        console.log($scope.test)
         $scope.addQuestion = function() {
             if($scope.test.questions == null) {
                 $scope.test.questions = [];
