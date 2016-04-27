@@ -5,7 +5,9 @@ module.exports = {
     getQuestions: getQuestions,
     updateQuestion: updateQuestion,
     getQuestion: getQuestion,
-    getStatistic: getStatistic
+    getStatistic: getStatistic,
+    removeQuestion: removeQuestion
+    
 };
 
 //curl -X POST 'http://localhost:3000/questions' -d '{ "text": "Question 105", "choices": [{"text":"one 105"}, {"text": "two 105"}, {"text": "three 105"} ]}' -H "Content-Type: application/json" -v
@@ -52,5 +54,13 @@ function getStatistic(req, res) {
     var id = req.params.id;
     return questionsService.countChoices(id).then(function (statistic) {
         res.json(statistic);
+    });
+}
+
+function removeQuestion(req, res) {
+    var id = req.params.id;
+    return questionsService.remove(id).then(function () {
+        res.json({});
+        res.end('Choice has been removed!');
     });
 }
