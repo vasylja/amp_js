@@ -17,8 +17,8 @@ angular.module('app').controller('UpdateTestController', [
             $scope.test.questions.forEach(function(item, i, arr) {
                 if(item===question) {
                     arr.splice(i, 1);
-                    DeleteChoicesByQuestionIdService.delete({qId: item.id});
-                    DeleteQuestionService.delete({qId: item.id});
+                    DeleteChoicesByQuestionIdService.delete({qId: question.id});
+                    DeleteQuestionService.delete({qId: question.id});
                 }
             });
         };
