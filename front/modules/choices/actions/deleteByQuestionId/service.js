@@ -3,7 +3,7 @@
  */
 angular.module('app').service('DeleteChoicesByQuestionIdService', [ '$resource',
     function($resource){
-        return $resource('/choices/question/:qId', {qId:'@id'}, {
+        return $resource('/choices/questions/:qId', {qId:'@id'}, {
             'delete': { method:'DELETE', isArray: false }
         });
     }

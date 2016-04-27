@@ -58,9 +58,11 @@ function getStatistic(req, res) {
 }
 
 function removeQuestion(req, res) {
+
     var id = req.params.id;
     return questionsService.remove(id).then(function () {
+        console.log("api------------------------------------------------------");
         res.json({});
-        res.end('Choice has been removed!');
+        res.end('Question has been removed!');
     });
 }

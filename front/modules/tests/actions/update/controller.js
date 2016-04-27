@@ -1,7 +1,7 @@
 angular.module('app').controller('UpdateTestController', [
-    '$scope', '$routeParams','$window' , 'UpdateTestService','DeleteChoicesByQuestionIdService',
+    '$scope', '$routeParams','$window' , 'UpdateTestService',
     'DeleteChoiceService','DeleteQuestionService', 'FindTestService',
-    function ($scope, $routeParams, $window, UpdateTestService,DeleteChoicesByQuestionIdService,
+    function ($scope, $routeParams, $window, UpdateTestService,
     DeleteChoiceService,DeleteQuestionService,FindTestService) {
 
         $scope.test = FindTestService.get({tId: $routeParams.id});
@@ -16,10 +16,17 @@ angular.module('app').controller('UpdateTestController', [
         $scope.removeQuestion = function(question) {
             $scope.test.questions.forEach(function(item, i, arr) {
                 if(item===question) {
+
                     arr.splice(i, 1);
-                    DeleteChoicesByQuestionIdService.delete({qId: item.id});
+                    if(item.choices!=null) {
+                        item.choices.forEach(function (ch, j, array) {
+                            DeleteChoiceService.delete({qId: ch.id});
+                        });
+                    }
                     DeleteQuestionService.delete({qId: item.id});
+
                 }
+
             });
         };
 
