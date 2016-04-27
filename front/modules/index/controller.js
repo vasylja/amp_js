@@ -4,7 +4,7 @@ angular.module('app').controller('HomeController', [
         $scope.go = function(id, isValid) {
             $scope.submitted = true;
             if(isValid) {
-               $window.location.href = '/#/questions/answer/' + id;
+               $window.location.href = '/#/tests/answer/' + id;
             }
         };
 
