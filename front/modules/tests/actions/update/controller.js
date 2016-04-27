@@ -5,7 +5,6 @@ angular.module('app').controller('UpdateTestController', [
     DeleteChoiceService,DeleteQuestionService,FindTestService) {
 
         $scope.test = FindTestService.get({qId: $routeParams.id});
-        console.log($scope.test);
 
         $scope.addQuestion = function() {
             if($scope.test.questions == null) {
