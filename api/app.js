@@ -51,7 +51,7 @@ app.post('/choices', choicesAPI.createChoice);
 app.put('/choices/:id', choicesAPI.updateChoice);
 app.delete('/choices/:id', choicesAPI.removeChoice);
 app.get('/choices', choicesAPI.queryChoices);
-app.delete('/choices', choicesAPI.removeByQuestionId);
+app.delete('/choices/question/:id', choicesAPI.removeByQuestionId);
 
 app.get('/answers/:id', answersAPI.getAnswer);
 
