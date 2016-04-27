@@ -4,11 +4,15 @@ body {
     background-attachment: fixed;
 }
 
-input[type=text]{
+/*input[type=text]{*/
+    /*background: rgba(0,0,0,0.9);*/
+/*}*/
+
+input[type=email]{
     background: lightgrey;
 }
 
-input[type=email]{
+input[type=text]{
     background: lightgrey;
 }
 

@@ -1,22 +1,25 @@
 
 <div>
-    <table style="margin:auto; margin-bottom: 40px; text-align:center">
+    <table style="margin:auto; margin-bottom: 150px;margin-top: 120px; text-align:center">
         <tr>
-            <td style="font-size:26px; padding-top:70px; ">
+            <td style="font-size:36px; padding-top:40px; ">
                 welcome to
             </td>
         </tr>
         <tr>
-            <td style="font-size:46px;padding-top:10px">
-                AMP
+            <td style="font-size:60px;padding-top:10px">
+                ASK ME PLENTY
             </td>
         </tr>
         <tr>
-            <td style="padding-top:30px">
-                <form name="form"  novalidate>
-                    <input type="text" name="id" style="height: 26px" ng-model="id" required id="in">
+            <td style="font-size:16px">enter test id <br></td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px; text-align:center">
+                <form name="form"  class="form-group" novalidate>
+                    <input type="text" name="id" style="height: 30px; width: 200px; display:table-cell; background: rgba(0,0,0,0.9);" class="form-control" ng-model="id" required id="in">
                     <button ng-click="go(id, form.$valid)" class="button">
-                        GO
+                        Answer
                     </button>
                     <p style="font-size:14px;color:#FF9CA7" ng-show="form.id.$invalid && submitted">should be not black</p>
                 </form>
@@ -24,7 +27,7 @@
         </tr>
         <tr>
             <td>
-                or <a href="/#/signin" style="color:#080808">sign in</a>
+               <h3>or <a href="/#/signin" style="margin-bottom: 100px;">sign in</a></h3>
             </td>
         </tr>
     </table>
