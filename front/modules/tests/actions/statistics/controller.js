@@ -42,14 +42,15 @@ angular.module('app').controller('StatisticsController', [
             console.log(data)
             var element = document.getElementsByClassName("container");
             $(element).append(
-                "<div id='chartContainer"  + i + "' style='height: 200px; width: 70%; margin-top:50px;'></div>"
+                "<div id='chartContainer"  + i + "' style='height: 200px; width: 70%; margin-top:50px; '></div>"
             );
 
             var chart = new CanvasJS.Chart("chartContainer" + i, {
+                 backgroundColor: 'rgba(' + 0 + ',' + 0 + ',' + 0 + ',' + 0 + ')',
                 title: {
                     text: (i + 1) + ". " + questionName,
                     // fontFamily: "Verdana",
-                    fontColor: "black",
+                    fontColor: "white",
                     fontSize: 25,
                     horizontalAlign: "left"
                 },
@@ -58,13 +59,13 @@ angular.module('app').controller('StatisticsController', [
                     tickThickness: 0,
                     lineThickness: 0,
                     valueFormatString: " ",
-                    gridThickness: 0
+                    gridThickness: 0,
                 },
                 axisX: {
                     tickThickness: 0,
                     lineThickness: 0,
                     labelFontSize: 18,
-                    labelFontColor: "Peru"
+                    labelFontColor: "#FF9CA7"
 
                 },
                 data: [

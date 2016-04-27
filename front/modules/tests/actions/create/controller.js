@@ -41,9 +41,8 @@ angular.module('app').controller('CreateTestController', [
         $scope.save = function(test, isValid) {
             $scope.submitted = true;
             if(isValid) {
-                //console.log($scope.test)
                 CreateTestService.save(test);
-                // $window.location.href = '/#/tests';
+                $window.location.href = '/#/tests';
             }
         };
     }
