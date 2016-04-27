@@ -33,7 +33,7 @@ app.post('/authenticate', usersAPI.authenticate);
 app.post('/users', usersAPI.createUser);
 app.get('/questions/:id', questionsAPI.getQuestion);
 app.post('/answers', answersAPI.createAnswer);
-
+app.delete('questions/:id', questionsAPI.removeQuestion);
 app.get('/tests/:id', testsAPI.getTest);
 // req.user -> parsed token
 app.use('/', expressJwt({ secret: config.jwtSecret }));

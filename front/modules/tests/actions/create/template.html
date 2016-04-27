@@ -4,7 +4,7 @@
             <div class="row wrapper border-bottom white-bg page-heading" style="margin-bottom: 10px;">
                 <div class="col-lg-10">
                     <h2>
-                        Test Creation
+                        Test Update
                     </h2>
                 </div>
                 <div class="col-lg-2">
@@ -15,15 +15,18 @@
             <form name="testCreation"  novalidate>
                 <div class="form-group" ng-class="{ 'has-error' : testCreation.questionText.$invalid && submitted }">
                     Test Name<input type="text" name="testName" ng-model="test.name" style="width: 70%" class="form-control" required ng-minlength="3" ng-maxlength="50">
-                    <p style="color: red" ng-show="testCreation.testName.$invalid && submitted" class="help-block">Name Length should be in Range 3 and 50</p>
+                    <p ng-show="testCreation.testName.$invalid && submitted" class="help-block" style="color: #FF9CA7">Name Length should be in Range 3 and 50</p>
+
                 </div>
 
                 <label>Questions</label>
                 <div class="form-group" ng-repeat="question in test.questions track by $index">
                     <div ng-class="{ 'has-error' : testCreation.question_text{{$index}}.$invalid && submitted }">
-                        Question Text
 
-                        <a align="right" href="" class="remove-choice" ng-click="removeQuestion(question)">
+                        Question Text <input type="text" class="form-control" style="display:table-row" name="question_text{{$index}}" ng-model="question.text" required>
+                        <p ng-show="testCreation.question_text{{$index}}.$invalid && submitted" class="help-block" style="color: #FF9CA7">Text should not be blank.</p>
+                        <a href="" class="remove-choice" ng-click="removeQuestion(question)">
+
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
 
@@ -36,7 +39,7 @@
                     <div class="form-group" ng-repeat="choice in question.choices track by $index">
                         <div ng-class="{ 'has-error' : testCreation.choice_text{{$index}}.$invalid && submitted }">
                             Choice Text <input type="text" class="form-control" style="display:table-row" name="choice_text{{$index}}" ng-model="choice.text" required>
-                            <p ng-show="testCreation.choice_text{{$index}}.$invalid && submitted" class="help-block">Text should not be blank.</p>
+                            <p ng-show="testCreation.choice_text{{$index}}.$invalid && submitted" class="help-block" style="color: #FF9CA7">Text should not be blank.</p>
                             <a href="" class="remove-choice" ng-click="removeChoice(question, choice)">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </a>
