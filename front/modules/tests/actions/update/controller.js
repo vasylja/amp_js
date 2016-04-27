@@ -40,7 +40,7 @@ angular.module('app').controller('UpdateTestController', [
                     item.choices.forEach(function(ch, j, array) {
                         if(ch===choice) {
                             array.splice(j,1);
-                            DeleteChoiceService.delete({qId: item.id});
+                            DeleteChoiceService.delete({qId: choice.id});
                         }
                     });
                 }
