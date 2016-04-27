@@ -32,13 +32,36 @@ a{
 a:hover{
     text-decoration: none;
     color: rgba(0,0,0,0.9);
-    background: rgba(0,0,0,0.5); !important;
+}
+
+.button{
+    background: rgba(0,0,0,0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 5px;
+    border: 2px;
+    border-color: #080808;
+}
+
+.button:hover{
+    background: rgba(0,0,0,0.9);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 5px;
+    border: 2px;
+    border-color: #000000;
+}
+
+.button:focus{
+    border: 2px;
+    border-color: #000000;
 }
 
 .home {
-    background: rgba(0,0,0,0.5);
-}
-.home:hover{
     background: rgba(0,0,0,0.5);
 }
 
@@ -51,6 +74,6 @@ a:hover{
     margin-right: 30px;
     margin-left: 30px;
     color: white;
-    margin-top: 40px;
-    background: rgba(0,0,0,0.5);
+    margin-top: 20px;
+    background: rgba(0,0,0,0.4);
 }

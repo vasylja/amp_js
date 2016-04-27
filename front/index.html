@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row menu">
 
-        <div class="container-fluid navbar-inverse">
+        <div class="container-fluid navbar-inverse" style="background:rgba(0,0,0,0.7)">
             <a ng-show="!isLoggedIn" href="#/" style="text-decoration: none">
                 <div class="navbar-header">
                     <h4 class="logo">AMP</h4>
@@ -25,8 +25,8 @@
             </a>
             <div>
                 <ul class="nav navbar-nav" ng-show="isLoggedIn">
-                    <li><a class="home" href="#/" ng-show="!isLoggedIn">Home</a></li>
-                    <li><a class="home" href="#/tests" ng-show="isLoggedIn">Home</a></li>
+                    <li class="active"><a href="#/" ng-show="!isLoggedIn">Home</a></li>
+                    <li class="active"><a href="#/tests" ng-show="isLoggedIn">Home</a></li>
                     <li><a href="#/tests/create">Create Test</a></li>
                     <li><a href="#/tests">List Tests</a></li>
                 </ul>
