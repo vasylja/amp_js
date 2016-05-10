@@ -1,0 +1,17 @@
+body{
+    margin: auto;
+    text-align: center;
+}
+
+.error{
+    color: #ac2925;
+    font-weight: bold;
+}
+
+.retreat-top{
+    margin-top: 10%;
+}
+
+.retreat-bottom{
+    margin-bottom: 10%;
+}

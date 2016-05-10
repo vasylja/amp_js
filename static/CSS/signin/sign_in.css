@@ -1,0 +1,32 @@
+body{
+    margin: auto;
+    text-align: center;
+}
+
+.retreat{
+    margin-top: 14%;
+    margin-bottom: 13.7%;
+}
+
+.input_text{
+    padding-left: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 25%;
+    height: 35px;
+}
+
+.button_sign_in{
+    border: 1px solid rgba(0,0,0,0.7);
+    border-radius: 5px;
+    color: #ffffff;
+    background: rgba(0,0,0,0.7);
+    margin-top: 5px;
+    width: 25%;
+    height: 35px;
+}
+
+.button_sign_in:hover{
+    background: rgba(0,0,0,0.9);
+}

@@ -1,37 +1,25 @@
-
-<div>
-    <table style="margin:auto; margin-bottom: 150px;margin-top: 120px; text-align:center">
-        <tr>
-            <td style="font-size:36px; padding-top:40px; ">
-                welcome to
-            </td>
-        </tr>
-        <tr>
-            <td style="font-size:60px;padding-top:10px">
-                ASK ME PLENTY
-            </td>
-        </tr>
-        <tr>
-            <td style="font-size:16px">enter test id <br></td>
-        </tr>
-        <tr>
-            <td style="padding-top:10px; text-align:center">
-                <form name="form"  class="form-group" novalidate>
-                    <input type="text" name="id" style="height: 30px; width: 200px; display:table-cell; background: rgba(0,0,0,0.9);" class="form-control" ng-model="id" required id="in">
-                    <button ng-click="go(id, form.$valid)" class="button">
-                        Answer
-                    </button>
-                    <p style="font-size:14px;color:#FF9CA7" ng-show="form.id.$invalid && submitted">should be not black</p>
-                </form>
-            </td>
-        </tr>
-        <tr>
-            <td>
-               <h3>or <a href="/#/signin" style="margin-bottom: 100px;">sign in</a></h3>
-            </td>
-        </tr>
-    </table>
-</div>
+<link href="/../../static/CSS/index/index.css" rel="stylesheet">
+    <div class="row retreat-top">
+        <h3>welcome to</h3>
+    </div>
+    <div class="row">
+        <h1>ASK ME PLENTY</h1>
+    </div>
+    <div>
+        <h5>enter test id</h5>
+    </div>
+    <div class="row">
+        <form name="form"  class="form-group" novalidate>
+            <input type="text" name="id" style="height: 30px; width: 200px; display:table-cell; background: rgba(0,0,0,0.9);" class="form-control" ng-model="id" required id="in">
+            <button ng-click="go(id, form.$valid)" class="button">
+                Answer
+            </button>
+            <p class="error" ng-show="form.id.$invalid && submitted">should be not black</p>
+        </form>
+    </div>
+    <div class="row retreat-bottom">
+        <h3>or <a href="/#/signin">sign in</a></h3>
+    </div>
 
 
 

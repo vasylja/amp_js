@@ -1,40 +1,26 @@
-<div class="container">
-    <div class="row">
-        <h3 align="center" style="margin-right: 100px;">List Tests</h3>
-    </div>
+<link href="../../../../../static/CSS/test/list/list.css" rel="stylesheet" />
 
     <div class="row">
-    <table class="table table-size" style="margin-left:5%;margin-right:5%;">
-        <thead style="background: rgba(0,0,0,0.6)">
-        <tr>
-            <td>
-                Id
-            </td>
-            <td>
-                Name
-            </td>
-            <td>
-                Actions
-            </td>
-        </tr>
-        </thead>
-        <div class="row" >
-        <tr ng-repeat="test in tests" style="background: rgba(0,0,0,0.3)">
-            <div class="col-lg-4">
-                <td>{{ test.id }}</td>
-            </div>
-            <div class="col-lg-4">
-                <td>{{ test.name }}</td>
-            </div>
-            <div class="col-lg-4">
-            <td>
-                <a href="{{editPath}}/{{test.id}}"><button class="button" type="button">Edit</button></a>
-                <a href="{{answerPath}}/{{test.id}}"><button class="button" type="button">Answer</button></a>
-                <a href="{{pathStats}}/{{test.id}}"><button class="button" type="button">Statistics</button></a>
-            </td>
-            </div>
-        </tr>
-        </div>
-    </table>
+        <h3>List Tests</h3>
     </div>
-</div>
+
+    <div class="row retreat">
+        <table class="table">
+            <thead class="thead_style">
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tr class="tbody_style" ng-repeat="test in tests">
+                <td>{{ test.id }}</td>
+                <td>{{ test.name }}</td>
+                <td>
+                    <a href="{{editPath}}/{{test.id}}"><button class="action_button" type="button">Edit</button></a>
+                    <a href="{{answerPath}}/{{test.id}}"><button class="action_button" type="button">Answer</button></a>
+                    <a href="{{pathStats}}/{{test.id}}"><button class="action_button" type="button">Statistics</button></a>
+                </td>
+            </tr>
+        </table>
+    </div>
